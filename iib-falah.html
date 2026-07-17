@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IIB Falāh | The Shariah Window of Investcent Investment Bank</title>
+<meta name="description" content="IIB Falāh is the Shariah window of Investcent Investment Bank: halal money market, equity, multi-asset, commodity, green, Ijarah and hedging solutions, certified by an independent Shariah Supervisory Board and regulated by the CMA, Kenya.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --em:#F7941D;            /* Falāh orange */
+  --em-deep:#D97C0A;
+  --em-soft:#FDEBD2;
+  --em-mist:#FEF7EC;
+  --ink:#1a1c23;
+  --forest:#1F2C5C;        /* Falāh navy */
+  --slate:#51606E;
+  --line:#F0E2CC;
+  --gold:#F7941D;
+  --blue:#0693e3;          /* Investcent brand tie-in */
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --shadow:0 18px 50px rgba(10,22,34,.10);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.65;font-size:16px}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.15}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--em)}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+.section{padding:56px 0}
+.section-head{max-width:740px;margin-bottom:32px}
+.section-head h2{font-family:var(--serif);font-size:clamp(30px,4vw,44px);font-weight:600;margin:14px 0 16px}
+.section-head p{color:var(--slate);font-size:16.5px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s;cursor:pointer;border:none}
+.btn-primary{background:var(--em);color:#fff;box-shadow:0 10px 24px rgba(247,148,29,.35)}
+.btn-primary:hover{background:var(--em-deep);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid var(--forest);color:var(--forest);background:transparent}
+.btn-ghost:hover{background:rgba(31,44,92,.08)}
+.btn-ghost.on-dark{border-color:rgba(255,255,255,.5);color:#fff}
+.btn-ghost.on-dark:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--forest);color:#fff}
+.btn-dark:hover{background:#182349;transform:translateY(-2px)}
+
+/* Pages */
+.page{display:none}
+.page.active{display:block;animation:pageIn .4s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.page-hero{background:linear-gradient(135deg,#FEF7EC 0%,#FDEFDB 60%,#FBE6C4 100%);color:var(--forest);position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 320px at 88% 10%,rgba(247,148,29,.16),transparent 62%)}
+.page-hero .inner{position:relative;padding:44px 0 38px}
+.page-hero .crumb{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--em-deep);font-weight:700;margin-bottom:14px}
+.page-hero h1{font-family:var(--serif);font-size:clamp(32px,4.4vw,52px);font-weight:600;max-width:800px;color:var(--forest)}
+.page-hero h1 em{font-style:italic;color:var(--em)}
+.page-hero p{color:var(--slate);font-size:16.5px;max-width:660px;margin-top:16px}
+.page-hero .crumb a{color:var(--em-deep) !important}
+
+/* Top strip */
+.topstrip{background:var(--forest);color:#C3CCE8;font-size:12.5px;padding:8px 0}
+.topstrip .container{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.topstrip a{color:#F7A93F;font-weight:700}
+
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{display:flex;align-items:center;color:var(--em)}
+.logo-text{line-height:1.05}
+.logo-text b{display:block;font-size:18px;letter-spacing:.06em;font-weight:800;color:var(--forest)}
+.logo-text small{font-size:8.5px;letter-spacing:.18em;color:var(--em-deep);font-weight:700}
+.nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+.nav-links>a,.drop-toggle{color:var(--slate);transition:.2s;position:relative;padding:26px 0;display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+.nav-links>a:hover,.dropdown:hover .drop-toggle{color:var(--ink)}
+.nav-links>a::after,.drop-toggle::after{content:"";position:absolute;left:0;bottom:18px;width:0;height:2px;background:var(--em);transition:.25s}
+.nav-links>a:hover::after,.dropdown:hover .drop-toggle::after{width:100%}
+.caret{font-size:10px;color:var(--em);transition:.25s}
+.dropdown:hover .caret{transform:rotate(180deg)}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:-14px;min-width:280px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:.22s;z-index:120;max-height:70vh;overflow:auto}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(2px)}
+.dropdown-menu a{display:block;padding:10px 22px;font-size:14px;color:var(--slate);transition:.15s}
+.dropdown-menu a:hover{background:var(--em-mist);color:var(--ink);padding-left:26px}
+.back-link{color:var(--blue) !important;font-weight:700}
+.back-link::after{background:var(--blue) !important}
+.nav-cta{display:flex;gap:14px;align-items:center}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--ink)}
+@media(max-width:1080px){
+  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:2px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);max-height:calc(100vh - 76px);overflow:auto}
+  .nav-links.open{display:flex}
+  .nav-links>a,.drop-toggle{padding:12px 0;font-weight:700;color:var(--ink)}
+  .nav-links>a::after,.drop-toggle::after{display:none}
+  .dropdown{width:100%}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 8px 14px;min-width:0;max-height:none}
+  .dropdown-menu a{padding:8px 0}
+  .dropdown-menu a:hover{background:none;padding-left:4px}
+  .caret{display:none}
+  .hamburger{display:block}
+}
+
+/* Hero (home) */
+.hero{position:relative;background:linear-gradient(135deg,#FEF7EC 0%,#FDEFDB 55%,#FBE6C4 100%);color:var(--forest);overflow:hidden;border-bottom:1px solid var(--line)}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 85% 15%,rgba(247,148,29,.18),transparent 65%),
+  radial-gradient(520px 320px at 8% 92%,rgba(31,44,92,.07),transparent 60%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:center;padding:46px 0 50px}
+.hero h1{font-family:var(--serif);font-size:clamp(40px,5.4vw,62px);font-weight:600;margin:22px 0 20px;color:var(--forest)}
+.hero h1 em{font-style:italic;color:var(--em)}
+.hero p.lead{font-size:18px;color:var(--slate);max-width:540px;margin-bottom:30px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-trust{margin-top:36px;display:flex;gap:32px;flex-wrap:wrap;font-size:13px;color:var(--slate)}
+.hero-trust b{display:block;font-size:21px;color:var(--forest);font-family:var(--serif)}
+.hero-card{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:28px;box-shadow:var(--shadow)}
+.hero-card h3{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:var(--em-deep);margin-bottom:16px}
+.rate-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px;gap:10px;color:var(--ink);transition:.15s}
+.rate-row:hover{color:var(--em-deep)}
+.rate-row:last-child{border-bottom:none}
+.rate-row .val{font-weight:700;color:var(--em);white-space:nowrap}
+.hero-card .note{font-size:11.5px;color:var(--slate);margin-top:14px}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:40px 0 44px}}
+
+/* Pillars */
+.pillars{background:var(--em-mist);border-bottom:1px solid var(--line)}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding:36px 0}
+.pillar h4{font-size:15.5px;margin:10px 0 6px}
+.pillar p{font-size:13.5px;color:var(--slate)}
+.pillar .ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(10,22,34,.05)}
+@media(max-width:900px){.pillars-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pillars-grid{grid-template-columns:1fr}}
+
+/* Product cards */
+.fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.fund-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;transition:.3s;background:#fff}
+.fund-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#F5CE93}
+.fund-card h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:6px}
+.fund-card .sub{font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--em-deep);font-weight:700;margin-bottom:12px}
+.fund-card p{font-size:14px;color:var(--slate);flex:1}
+.fund-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.fund-stats div{background:var(--em-mist);border-radius:12px;padding:10px 13px}
+.fund-stats small{display:block;font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--slate)}
+.fund-stats b{font-size:13.5px}
+.fund-card .link{font-weight:700;color:var(--em-deep);font-size:14px}
+@media(max-width:960px){.fund-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.fund-grid{grid-template-columns:1fr}}
+
+/* Product detail */
+.fund-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;position:relative}
+.fund-meta span{font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;background:#fff;color:var(--em-deep);border:1px solid var(--em)}
+.objective-box{background:var(--em-mist);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;margin-bottom:30px}
+.objective-box h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px}
+.objective-box p{color:var(--slate);font-size:15px}
+.detail-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:start;margin-bottom:30px}
+.glance-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.glance-card .fh{background:linear-gradient(120deg,var(--forest),#2A3A6F);color:#fff;padding:16px 26px}
+.glance-card .fh h3{font-size:16px}
+.glance-card .fh small{color:#F7A93F;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.glance-card table{width:100%;border-collapse:collapse;font-size:13.5px}
+.glance-card td{padding:10px 26px;border-bottom:1px solid var(--line)}
+.glance-card td:first-child{color:var(--slate);width:46%}
+.glance-card td:last-child{font-weight:600}
+.glance-card tr:last-child td{border-bottom:none}
+.why-list{border:1px solid var(--line);border-radius:var(--radius);background:#fff;padding:26px 28px}
+.why-list h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:14px}
+.why-list ul{list-style:none}
+.why-list li{padding:9px 0 9px 30px;position:relative;font-size:14px;color:var(--ink);border-bottom:1px dashed var(--line)}
+.why-list li:last-child{border-bottom:none}
+.why-list li::before{content:"☪";position:absolute;left:2px;color:var(--em);font-weight:800;font-size:13px}
+.risk-note{font-size:12px;color:var(--slate);background:var(--em-mist);border:1px solid var(--line);border-radius:12px;padding:16px 20px}
+@media(max-width:880px){.detail-grid{grid-template-columns:1fr}}
+
+/* Structure blocks */
+.struct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.struct-card{border-left:3px solid var(--em);background:#fff;border-radius:0 16px 16px 0;padding:26px 24px;box-shadow:0 4px 14px rgba(10,22,34,.05);transition:.25s}
+.struct-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-left-color:var(--forest)}
+.struct-card h4{font-size:16px;margin-bottom:8px}
+.struct-card .ar{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--em-deep);font-weight:700;margin-bottom:8px}
+.struct-card p{font-size:13.5px;color:var(--slate)}
+@media(max-width:900px){.struct-grid{grid-template-columns:1fr}}
+.screen-band{background:linear-gradient(120deg,var(--forest),#2A3A6F);color:#fff;border-radius:var(--radius);padding:40px 38px;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;position:relative;overflow:hidden;margin-top:40px}
+.screen-band::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 280px at 90% 10%,rgba(247,148,29,.25),transparent 60%)}
+.screen-band h3{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;position:relative}
+.screen-band h3 em{font-style:italic;color:#F7A93F}
+.screen-band p{color:#C3CCE8;font-size:14.5px;margin-top:12px;position:relative}
+.screen-points{position:relative;display:grid;gap:14px}
+.screen-points div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;font-size:13.5px}
+.screen-points b{color:#F7A93F;display:block;font-size:13px}
+@media(max-width:900px){.screen-band{grid-template-columns:1fr}}
+
+/* FAQ / contact */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+details summary{padding:18px 22px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+details summary::after{content:"+";font-size:22px;color:var(--em);font-weight:400;transition:.2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details .faq-body{padding:0 22px 18px;font-size:14px;color:var(--slate)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.c-row{display:flex;gap:16px;margin-bottom:20px;font-size:14.5px}
+.c-row .ic{width:42px;height:42px;flex:none;border-radius:12px;background:var(--em-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
+.c-row b{display:block;font-size:14px}
+.c-row span{color:var(--slate);font-size:13.5px}
+input,select,textarea{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--em)}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}form .row{grid-template-columns:1fr}}
+
+/* CTA + footer */
+.cta-band{background:linear-gradient(120deg,var(--forest),#2A3A6F);color:#fff;border-radius:var(--radius);padding:46px 44px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 240px at 90% 20%,rgba(247,148,29,.28),transparent 60%)}
+.cta-band h3{font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:600;position:relative}
+.cta-band p{color:#C3CCE8;font-size:14.5px;margin-top:6px;position:relative}
+.cta-band .btn{position:relative}
+footer{background:var(--forest);color:#C3CCE8;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:44px;padding:56px 0 42px}
+.foot-grid h5{color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.foot-grid a{display:block;margin-bottom:11px;transition:.2s;font-size:13.5px}
+.foot-grid a:hover{color:#F7A93F}
+.foot-brand p{font-size:13.5px;margin-top:16px;max-width:320px}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#C3CCE8;transition:.2s}
+.socials a:hover{background:var(--em);border-color:var(--em);color:#fff;transform:translateY(-2px)}
+.reg-strip{background:#182349;padding:18px 0;font-size:12.5px;color:#9AA6D6;border-top:1px solid rgba(255,255,255,.06)}
+.foot-legal{border-top:1px solid rgba(255,255,255,.1);padding:24px 0;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<div class="topstrip">
+  <div class="container">
+    <span>IIB Falāh · The Shariah window of Investcent Investment Bank</span>
+    <span>Guided by an independent Shariah Supervisory Board · <a href="index.html">Visit Investcent main site ↗</a></span>
+  </div>
+</div>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="#/home" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 62 46" width="48" height="36" aria-hidden="true"><circle cx="18" cy="28" r="12.5" fill="none" stroke="currentColor" stroke-width="4.6"/><circle cx="37" cy="23" r="16.5" fill="none" stroke="currentColor" stroke-width="4.6"/><path d="M28 33 L45 16 M36.5 16 H45 V24.5" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="logo-text"><b>IIB Falãh</b><small>YOUR SHARIAH PATHWAY TO SUCCESS</small></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#/home">Home</a>
+      <a href="#/about">About Falāh</a>
+      <div class="dropdown">
+        <span class="drop-toggle">Products <span class="caret">▼</span></span>
+        <div class="dropdown-menu" id="prodMenu"></div>
+      </div>
+      <a href="#/structures">How It Works</a>
+      <a href="#/faqs">FAQs</a>
+      <a href="#/contact">Get in Touch</a>
+      <a href="index.html" class="back-link">Investcent ↗</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="#/contact" style="padding:11px 22px;font-size:14px">Invest Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<main id="pages">
+
+<!-- HOME -->
+<section class="page" id="page-home">
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--em-deep)">The Shariah Window of Investcent Investment Bank</span>
+        <h1>Wealth that honours <em>your faith.</em></h1>
+        <p class="lead">IIB Falāh offers a complete suite of Shariah-compliant investment products, screened and certified by an independent Shariah Supervisory Board, so your wealth grows in a halal and ethical manner.</p>
+        <div class="hero-actions">
+          <a href="#/products" class="btn btn-primary">Explore Products</a>
+          <a href="#/structures" class="btn btn-ghost">How It Works</a>
+        </div>
+        <div class="hero-trust">
+          <div><b>SSB</b>Independent Shariah<br>Supervisory Board</div>
+          <div><b>9</b>Shariah products<br>across KES &amp; USD</div>
+          <div><b>CMA</b>Regulated in<br>Kenya</div>
+          <div><b>100%</b>Purification of any<br>non-permissible income</div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>Product Snapshot</h3>
+        <a class="rate-row" href="#/prod-mmf"><span>Money Market Shariah Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-fixed"><span>Shariah Fixed Account Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-multi"><span>Multi-Asset Shariah Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-equity"><span>Standalone Shariah Equity Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-commodity"><span>Commodity Murabahah Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-green"><span>Green Shariah Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-lease"><span>Islamic Lease (Ijarah) ETF</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-reit"><span>Islamic Real Estate (REIT) Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/prod-hedging"><span>Islamic Hedging (Wa'd)</span><span class="val">→</span></a>
+      </aside>
+    </div>
+  </header>
+
+  <section class="pillars">
+    <div class="container pillars-grid">
+      <div class="pillar"><div class="ic">🕌</div><h4>Certified, Not Retrofitted</h4><p>Products are halal by structure through Wakalah, Mudarabah, Murabaha and Ijarah contracts, not conventional products with a screening overlay.</p></div>
+      <div class="pillar"><div class="ic">🔍</div><h4>Three-Tier Screening</h4><p>Business-activity screening, strict financial-ratio thresholds and a Maqasid al-Shariah ethical score of at least 60/100 for every holding.</p></div>
+      <div class="pillar"><div class="ic">💧</div><h4>Purification Built In</h4><p>Any inadvertent non-permissible income is automatically identified, isolated and directed to charity, keeping your returns Shariah-clean.</p></div>
+      <div class="pillar"><div class="ic">🛡️</div><h4>Independent Oversight</h4><p>A qualified Shariah Supervisory Board reviews, approves and monitors every investment, with quarterly re-screening of all holdings.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Our Products</span>
+        <h2>A halal solution for every goal</h2>
+        <p>From conservative cash management to equities, commodities, real estate and risk management, each product is certified by the SSB and regulated by the Capital Markets Authority. Open a product to explore its structure and details.</p>
+      </div>
+      <div class="fund-grid" id="homeProdGrid"></div>
+      <p class="risk-note reveal" style="margin-top:36px"><b>Important:</b> Capital is at risk and past performance is not a guide to future performance. In line with Mudarabah principles, capital losses are borne by the investor except where caused by Investcent's proven negligence, wilful misconduct or breach of the Shariah mandate. Read each product's Shariah Information Memorandum before investing.</p>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--em-mist)">
+    <div class="container">
+      <div class="cta-band reveal">
+        <div><h3>Begin your halal investment journey</h3><p>Open an IIB Falāh account and select your products in minutes.</p></div>
+        <a href="#/contact" class="btn btn-primary">Invest Now</a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ABOUT -->
+<section class="page" id="page-about">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">About Falāh</div>
+    <h1>Falāh: success in this world <em>and the next.</em></h1>
+    <p>IIB Falāh is the dedicated Shariah window of the Investcent Investment Bank Unit Trust Fund, built so that faith and finance never have to be traded against each other.</p>
+  </div></div>
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who We Are</span>
+        <h2>The Shariah window of Investcent</h2>
+        <p>IIB Falāh combines Investcent's active investment discipline with rigorous, independent Shariah governance. Every product, contract and counterparty is certified by our Shariah Supervisory Board before launch and monitored continuously thereafter.</p>
+      </div>
+      <div class="struct-grid">
+        <div class="struct-card reveal"><div class="ar">Governance</div><h4>Shariah Supervisory Board</h4><p>A qualified, independent SSB reviews, approves and monitors every investment, certifies every transaction structure, and reviews the entire portfolio quarterly. Brochures and documents are reviewed for Shariah accuracy before distribution.</p></div>
+        <div class="struct-card reveal"><div class="ar">Screening</div><h4>What We Will Never Invest In</h4><p>No conventional interest-based banking or insurance, alcohol, pork-related products, gambling, adult entertainment, tobacco or non-defensive weapons. Financial thresholds: interest-bearing debt and interest-bearing cash each below 33% of assets; non-compliant revenue below 5%.</p></div>
+        <div class="struct-card reveal"><div class="ar">Ethics</div><h4>Maqasid al-Shariah Scoring</h4><p>Holdings must achieve a minimum impact score of 60/100 across five pillars: Faith, Life, Intellect, Lineage and Wealth. The Preservation of Life pillar specifically scores environmental sustainability and workplace safety.</p></div>
+      </div>
+      <div class="screen-band reveal">
+        <div>
+          <h3>Purification and reserves, <em>explained.</em></h3>
+          <p>Any inadvertent non-permissible income is identified, isolated and directed to charity before distribution. To smooth returns across strong and weak periods, up to 2% of the net profit pool may be appropriated into a Profit Equalisation Reserve, and a further portion may be retained into an Investment Risk Reserve. The two reserves are jointly capped at 30% of NAV, and the full mechanism is set out in Section 21 of the Shariah Information Memorandum.</p>
+        </div>
+        <div class="screen-points">
+          <div><b>Profit Equalisation Reserve (PER)</b>Applied proportionately before distribution, so the cost is shared by all with an interest in that period's profit.</div>
+          <div><b>Investment Risk Reserve (IRR)</b>Retained after your share is calculated; returned pro-rata if the Fund is ever wound up.</div>
+          <div><b>Charity purification</b>Non-permissible income never reaches your returns.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- PRODUCTS OVERVIEW -->
+<section class="page" id="page-products">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Products</div>
+    <h1>Nine products, one standard: <em>halal by structure.</em></h1>
+    <p>Every product is built on certified Shariah contracts, in KES and USD classes, and regulated by the Capital Markets Authority, Kenya.</p>
+  </div></div>
+  <section class="section">
+    <div class="container">
+      <div class="fund-grid" id="prodPageGrid"></div>
+      <p class="risk-note reveal" style="margin-top:36px"><b>Important:</b> Capital is at risk and past performance is not a guide to future performance. Read each product's Shariah Information Memorandum and, where applicable, the Ijarah Terms Schedule or Islamic Hedging Master Terms before investing.</p>
+    </div>
+  </section>
+</section>
+
+<!-- STRUCTURES -->
+<section class="page" id="page-structures">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">How It Works</div>
+    <h1>The contracts behind <em>your investment.</em></h1>
+    <p>Islamic finance replaces interest-based lending with genuine trade, agency and lease contracts. These are the structures IIB Falāh uses.</p>
+  </div></div>
+  <section class="section">
+    <div class="container">
+      <div class="struct-grid">
+        <div class="struct-card reveal"><div class="ar">Wakalah</div><h4>Agency for Investment</h4><p>You appoint Investcent as your Wakil (investment agent) to manage your capital for a defined Wakalah Fee. Used across our fund products; the money market and fixed account products use Wakalah only, with no performance share.</p></div>
+        <div class="struct-card reveal"><div class="ar">Mudarabah</div><h4>Profit Sharing</h4><p>On growth products, Investcent acts as Mudarib and shares only in profit above a demanding hurdle rate. Capital losses are borne by you as Rab al-Maal, except where caused by proven negligence, misconduct or breach of the Shariah mandate.</p></div>
+        <div class="struct-card reveal"><div class="ar">Murabaha &amp; Salam</div><h4>Asset-Backed Trade</h4><p>Cost-plus and forward-sale contracts over real, permissible commodities. Every transaction is backed by an actual underlying asset and a genuine sale contract; no speculative futures, CFDs or derivatives.</p></div>
+        <div class="struct-card reveal"><div class="ar">Ijarah</div><h4>Lease</h4><p>The Fund acts as lessor over real property and leased assets, earning rental income (Ujrah). As owner, the Fund bears major maintenance and Takaful costs, consistent with genuine Ijarah. Rentals are fixed or determinable, never floating against an interest benchmark.</p></div>
+        <div class="struct-card reveal"><div class="ar">Wa'd</div><h4>Unilateral Promise</h4><p>A binding one-sided promise used for Shariah-compliant hedging of a genuine underlying exposure. Only the promisor is bound; no exchange contract exists until the promise is invoked and a real sale is executed.</p></div>
+        <div class="struct-card reveal"><div class="ar">Sukuk</div><h4>Islamic Certificates</h4><p>Asset-based certificates used across our money market, green and multi-asset products, including green Sukuk whose proceeds are earmarked for climate and environmental projects.</p></div>
+      </div>
+      <div class="screen-band reveal">
+        <div>
+          <h3>Fees that only win <em>when you win.</em></h3>
+          <p>Growth products carry a Wakalah Fee of 5% p.a. prorated over 365 days, plus a Performance Charge only above the hurdle: 10% of returns above a 25% hurdle on KES classes, or 15% of returns above a 15% hurdle on USD classes. Conservative products (Money Market and Fixed Account) charge a flat 1.5% p.a. Wakalah Fee with no performance share at all. Ijarah products charge an estimated 1.5% p.a. asset management fee with an income incentive above a 15% yield hurdle, pending final SSB confirmation.</p>
+        </div>
+        <div class="screen-points">
+          <div><b>Below the hurdle</b>No performance charge applies. None.</div>
+          <div><b>No initial or redemption fees</b>0% entry and 0% exit on fund products.</div>
+          <div><b>Full disclosure</b>Every fee is set out in the Shariah Information Memorandum before you invest.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- FAQS -->
+<section class="page" id="page-faqs">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">FAQs</div>
+    <h1>Questions investors <em>ask us.</em></h1>
+    <p>How IIB Falāh keeps your investments halal, and the practicalities of investing.</p>
+  </div></div>
+  <section class="section">
+    <div class="container" style="max-width:840px">
+      <details open><summary>How do I open an IIB Falāh account?</summary><div class="faq-body">Complete the IIB Falāh Account Opening &amp; KYC Form, then the Investment Application Form, selecting your chosen product in the Fund Selection Schedule. Transfer your investment to the Fund's dedicated Shariah bank account, and units are allocated at the next Valuation Point after cleared funds are received.</div></details>
+      <details><summary>Who certifies that the products are Shariah-compliant?</summary><div class="faq-body">An independent, qualified Shariah Supervisory Board (SSB) reviews, approves and monitors every investment, certifies every contract structure before use, and re-screens all holdings quarterly. Product brochures are reviewed by the SSB before distribution.</div></details>
+      <details><summary>What happens if a holding becomes non-compliant?</summary><div class="faq-body">It is reclassified and divested under SSB oversight: immediately if in profit, or conditionally held to breakeven if at a loss. Any non-permissible income identified is purified by donation to charity before distribution.</div></details>
+      <details><summary>What fees will I pay?</summary><div class="faq-body">Conservative products (Money Market Shariah Fund and Shariah Fixed Account Fund) charge a flat 1.5% p.a. Wakalah Fee with no performance share. Growth products charge a 5% p.a. Wakalah Fee plus a Performance Charge only above the hurdle: 10% above a 25% hurdle (KES) or 15% above a 15% hurdle (USD). There are no initial or redemption fees on fund products.</div></details>
+      <details><summary>Who bears investment losses?</summary><div class="faq-body">In line with Mudarabah principles, capital losses are borne by you as the capital provider (Rab al-Maal), except where a loss results from Investcent's proven negligence, wilful misconduct or breach of the Fund's Shariah mandate, in which case Investcent bears the loss.</div></details>
+      <details><summary>What are the PER and IRR reserves?</summary><div class="faq-body">The Profit Equalisation Reserve (up to 2% of the net profit pool, applied before distribution) smooths returns across periods, and the Investment Risk Reserve (retained after your share is calculated) cushions future losses and is returned pro-rata on wind-up. They are jointly capped at 30% of NAV; see Section 21 of the Shariah Information Memorandum.</div></details>
+      <details><summary>How liquid are the products?</summary><div class="faq-body">Money Market and Fixed Account products have a two-week lock-in with redemptions typically processed within 2 working days. Growth products have a 6-month lock-in with redemptions in 2 to 3 working days, and no exit fee. Ijarah products (Lease ETF and REIT) require a minimum 30-day redemption notice.</div></details>
+      <details><summary>Can institutions and chamas invest?</summary><div class="faq-body">Yes. Retail, institutional and group investors can invest, subject to minimum investment amounts and KYC requirements.</div></details>
+      <details><summary>Who regulates IIB Falāh?</summary><div class="faq-body">All products operate under the regulatory framework of the Capital Markets Authority, Kenya, alongside continuous Shariah oversight by the SSB.</div></details>
+    </div>
+  </section>
+  <section class="section" style="background:var(--em-mist)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Payment Options</span>
+        <h2>How to pay in your investment</h2>
+        <p>Transfer your investment amount to the Fund's dedicated Shariah bank account, quoting your investment account number as the reference. Dedicated Shariah account details are provided with your welcome pack and on request, so that your funds are never commingled with conventional balances.</p>
+      </div>
+      <div class="struct-grid">
+        <div class="struct-card reveal"><div class="ar">Step 1</div><h4>Complete your forms</h4><p>The IIB Falāh Account Opening &amp; KYC Form, then the Investment Application Form with your product selection.</p></div>
+        <div class="struct-card reveal"><div class="ar">Step 2</div><h4>Transfer your investment</h4><p>Pay into the dedicated Shariah collection account for your currency, quoting your investment account number as the reference.</p></div>
+        <div class="struct-card reveal"><div class="ar">Step 3</div><h4>Units allocated</h4><p>Units are allocated at the Net Asset Value determined at the next Valuation Point following receipt of cleared funds.</p></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- CONTACT -->
+<section class="page" id="page-contact">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Get in Touch</div>
+    <h1>Begin your halal <em>investment journey.</em></h1>
+    <p>Speak to the IIB Falāh team about any product, the Shariah governance framework, or opening an account.</p>
+  </div></div>
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="c-row"><div class="ic">📍</div><div><b>Head Office</b><span>The Address, Muthangari Drive, Nairobi<br>P.O. Box 19445-00202, Nairobi, Kenya</span></div></div>
+        <div class="c-row"><div class="ic">📞</div><div><b>Call or WhatsApp</b><span>0709 327 800</span></div></div>
+        <div class="c-row"><div class="ic">✉️</div><div><b>Email</b><span>growwithus@investcent.co</span></div></div>
+        <div class="c-row"><div class="ic">🕌</div><div><b>Shariah Governance</b><span>Guided by an independent Shariah Supervisory Board; regulated by the Capital Markets Authority, Kenya</span></div></div>
+        <div class="c-row"><div class="ic">🏦</div><div><b>Payments</b><span>Dedicated Shariah collection account details are provided at onboarding and on request</span></div></div>
+      </div>
+      <form class="reveal" onsubmit="event.preventDefault();this.innerHTML='<p style=\'font-size:17px;font-weight:600\'>Thank you, your message has been sent. The IIB Falāh team will be in touch within one working day.</p>'">
+        <div class="row">
+          <input type="text" placeholder="Full name" required>
+          <input type="email" placeholder="Email address" required>
+        </div>
+        <div class="row">
+          <input type="tel" placeholder="Phone number">
+          <select required id="prodSelect">
+            <option value="" disabled selected>I'm interested in…</option>
+          </select>
+        </div>
+        <textarea rows="4" placeholder="Tell us about your goals"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<footer>
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <a href="#/home" class="logo">
+        <div class="logo-mark" style="color:var(--em)"><svg viewBox="0 0 62 46" width="48" height="36" aria-hidden="true"><circle cx="18" cy="28" r="12.5" fill="none" stroke="currentColor" stroke-width="4.6"/><circle cx="37" cy="23" r="16.5" fill="none" stroke="currentColor" stroke-width="4.6"/><path d="M28 33 L45 16 M36.5 16 H45 V24.5" fill="none" stroke="currentColor" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="logo-text"><b style="color:#fff">IIB Falãh</b><small style="color:#F7A93F">YOUR SHARIAH PATHWAY TO SUCCESS</small></div>
+      </a>
+      <p>Falāh means true success: prosperity in this world and the next. The Shariah window of the Investcent Investment Bank Unit Trust Fund.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="#" aria-label="X (Twitter)" title="X">𝕏</a>
+        <a href="#" aria-label="Facebook" title="Facebook">f</a>
+        <a href="#" aria-label="Instagram" title="Instagram">◎</a>
+        <a href="https://wa.me/254709327800" aria-label="WhatsApp" title="WhatsApp">✆</a>
+      </div>
+    </div>
+    <div>
+      <h5>Products</h5>
+      <div id="footProds"></div>
+    </div>
+    <div>
+      <h5>IIB Falāh</h5>
+      <a href="#/about">About Falāh</a>
+      <a href="#/structures">How It Works</a>
+      <a href="#/faqs">FAQs</a>
+      <a href="#/contact">Get in Touch</a>
+      <a href="index.html">Investcent main site ↗</a>
+    </div>
+  </div>
+  <div class="reg-strip">
+    <div class="container">IIB Falāh is the Shariah window of the Investcent Investment Bank Unit Trust Fund, regulated by the Capital Markets Authority, Kenya, with continuous oversight by an independent Shariah Supervisory Board. Capital is at risk; the value of units and any income from them can go down as well as up, and you may not get back the full amount invested. Product summaries on this site must be read together with the IIB Falāh Shariah Information Memorandum, which prevails in the event of any inconsistency.</div>
+  </div>
+  <div class="container foot-legal">
+    <span>© 2026 Investcent Investment Bank. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Use · Complaints</span>
+  </div>
+</footer>
+
+<script>
+/* ================= Product data (from SSB-reviewed brochures) ================= */
+const PRODUCTS=[
+  {
+    id:'mmf', name:'Money Market Shariah Fund', tag:'Capital stability with steady, halal profit', contract:'Wakalah bi al-Istithmar (agency only)', risk:'Low',
+    blurb:'The most conservative product in the range, investing exclusively in Shariah-compliant money market instruments with a maximum weighted average tenor of eighteen months.',
+    stats:[['Risk rating','Low'],['Wakalah fee','1.5% p.a. of NAV'],['Lock-in','2 weeks'],['Performance fee','None']],
+    objective:'The Fund invests exclusively in Shariah-compliant money market instruments with a maximum weighted average tenor of eighteen months: Sukuk-based commercial instruments, Islamic certificates of deposit and Wakala-based call deposits, aiming for maximum capital stability alongside a reasonable level of current halal income. Halal profit is declared daily and credited monthly.',
+    glance:[['Shariah contract','Wakalah bi al-Istithmar (agency for investment) only'],['Risk rating','Low'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 2,000 or USD 20'],['Lock-in period','2 weeks from initial investment'],['Wakalah fee','1.5% p.a. of NAV, accrued daily, payable monthly'],['Performance fee','None'],['Profit distribution','Monthly, on a weighted-average basis'],['Liquidity','High; typically within 2 working days after lock-in'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Capital stability suited to short-term halal cash management','Predictable profit, declared daily and credited monthly','The shortest lock-in in the Fund range: just two weeks','No performance fee; you keep 100% of net profit after the Wakalah Fee','Every counterparty and instrument certified by the SSB before use'],
+    risks:'Profit-rate risk, counterparty risk, liquidity risk in exceptional circumstances, and purification risk (any non-permissible income identified is removed before distribution).'
+  },
+  {
+    id:'fixed', name:'Shariah Fixed Account Fund', tag:'Stable, Shariah-compliant returns for capital preservation', contract:'Wakalah over Murabaha placements', risk:'Low',
+    blurb:'Preserves capital while generating steady halal profit through Murabaha-based commercial instruments, Islamic certificates of deposit and Wakalah-based call deposits.',
+    stats:[['Risk rating','Low'],['Wakalah fee','1.5% p.a. of NAV'],['Lock-in','2 weeks'],['Performance fee','None']],
+    objective:'The Fund seeks to preserve investor capital while generating steady, Shariah-compliant profit by placing funds in Murabaha-based commercial instruments, Islamic certificates of deposit and Wakalah-based call deposits with a maximum weighted average tenor of eighteen months. Designed for investors who prioritise capital stability and predictable liquidity over growth.',
+    glance:[['Shariah contract','Wakalah bi al-Istithmar over Murabaha and Islamic fixed-deposit placements'],['Risk rating','Low'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 2,000 or USD 20'],['Lock-in period','2 weeks from initial investment'],['Wakalah fee','1.5% p.a. of NAV, accrued daily, payable monthly'],['Performance fee','None'],['Profit distribution','Monthly, on a weighted-average basis'],['Liquidity','High; typically within 2 working days after lock-in'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Conservative, low-risk profile for short-term halal cash management','Predictable profit, declared daily and credited monthly','High liquidity with a short two-week lock-in','No performance fee; there is no Mudarib profit share on this product','Fully Shariah-screened placements, certified by the SSB before use'],
+    risks:'Profit-rate risk on Murabaha placements, counterparty risk, liquidity risk in exceptional circumstances, and purification risk.'
+  },
+  {
+    id:'multi', name:'Multi-Asset Shariah Fund', tag:'Grow your wealth ethically, responsibly and in line with your faith', contract:'Wakalah + Mudarabah', risk:'Medium to High',
+    blurb:'Long-term Shariah-compliant capital growth across Sukuk, screened equities, Murabaha placements, compliant ETFs, permissible real estate and impact investments.',
+    stats:[['Risk rating','Medium to High'],['Wakalah fee','5% p.a. prorated'],['Lock-in','6 months'],['Perf. charge','Above hurdle only']],
+    objective:'The Fund seeks long-term, Shariah-compliant capital growth by investing across a diversified range of Shariah-compliant asset classes: Sukuk, Shariah-screened equities, Murabaha placements, Shariah-compliant ETFs and mutual funds, permissible real estate and impact investments, each passing the three-tier Shariah Screening Criteria before entering the portfolio and re-screened quarterly.',
+    glance:[['Shariah contract','Wakalah (agency) + Mudarabah (profit-sharing)'],['Risk rating','Medium to High'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 50,000 or USD 500'],['Lock-in period','6 months from initial investment'],['Initial / redemption fee','0% / 0%'],['Wakalah fee','5% p.a., prorated over 365 days'],['Performance charge (KES)','10% on returns above a 25% hurdle rate'],['Performance charge (USD)','15% on returns above a 15% hurdle rate'],['Reporting','Quarterly statements and fact sheets; regular market commentary'],['Liquidity','High; typically 2 to 3 working days after lock-in'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['100% Shariah-compliant, screened and structured to align with Islamic principles','Independent SSB oversight of every investment','Global investment access with full Shariah compliance','Disciplined risk management focused on protecting capital','Purification built in, with non-permissible income directed to charity','Redeemable after the 6-month lock-in with no exit fee'],
+    risks:'Market risk, Shariah reclassification risk (with divestment procedures under SSB oversight), concentration risk from the narrower compliant universe, purification risk, and a fee load that should be reviewed alongside expected performance.'
+  },
+  {
+    id:'equity', name:'Standalone Shariah Equity Fund', tag:'Halal growth, professionally managed', contract:'Wakalah + Mudarabah', risk:'Medium to High',
+    blurb:'A diversified portfolio of Shariah-screened equities on the NSE and select international exchanges, passing three-tier screening before purchase.',
+    stats:[['Risk rating','Medium to High'],['Wakalah fee','5% p.a. prorated'],['Lock-in','6 months'],['Perf. charge','Above hurdle only']],
+    objective:'The Fund seeks long-term, Shariah-compliant capital growth by investing in a diversified portfolio of Shariah-screened equities listed on the Nairobi Securities Exchange and select international exchanges. Every holding passes qualitative business-activity screening, quantitative financial-ratio screening and Maqasid al-Shariah ethical screening before it enters the portfolio, and is re-screened quarterly.',
+    glance:[['Shariah contract','Wakalah (agency) + Mudarabah (profit-sharing)'],['Risk rating','Medium to High'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 50,000 or USD 500'],['Lock-in period','6 months from initial investment'],['Wakalah fee','5% p.a., prorated over 365 days'],['Performance charge (KES)','10% on returns above a 25% hurdle rate'],['Performance charge (USD)','15% on returns above a 15% hurdle rate'],['Liquidity','Redeemable after lock-in; typically 2 to 3 working days'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Access equity market returns without compromising your Shariah obligations','Diversification across sectors and permissible geographies','Continuous SSB oversight with quarterly monitoring','Purification built in, keeping distributed returns Shariah-clean','Professional management with independent certification of material decisions'],
+    risks:'Market risk, Shariah reclassification risk (mandatory divestment within 90 days, potentially at a loss), concentration risk, purification risk and liquidity risk in exceptional circumstances.'
+  },
+  {
+    id:'commodity', name:'Commodity Murabahah Fund', tag:'Halal exposure to real, tangible assets', contract:'Wakalah + Mudarabah via Murabaha / Salam', risk:'Medium to High',
+    blurb:'Capital growth through Shariah-compliant, asset-backed commodity transactions over agricultural produce, base metals and energy-transition materials.',
+    stats:[['Risk rating','Medium to High'],['Wakalah fee','5% p.a. prorated'],['Lock-in','6 months'],['Perf. charge','Above hurdle only']],
+    objective:'The Fund seeks capital growth by participating in Shariah-compliant, asset-backed commodity transactions structured through Murabaha (cost-plus sale) and, where certified by the SSB, Salam (forward-sale) arrangements over permissible physical commodities. Unlike conventional commodity funds, it does not trade speculative futures, CFDs or derivatives; every transaction is backed by a real asset and a genuine sale contract.',
+    glance:[['Shariah contract','Wakalah + Mudarabah, structured via Murabaha / Salam transactions'],['Risk rating','Medium to High'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 50,000 or USD 500'],['Lock-in period','6 months from initial investment'],['Wakalah fee','5% p.a., prorated over 365 days'],['Performance charge (KES)','10% on returns above a 25% hurdle rate'],['Performance charge (USD)','15% on returns above a 15% hurdle rate'],['Liquidity','Redeemable after lock-in; typically 2 to 3 working days'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Every transaction tied to an actual, identifiable commodity','Commodity-linked returns add diversification versus equities and fixed income','Halal by structure through the Murabaha / Salam mechanism, not just screening','Profit-sharing upside aligned through the hurdle-rate mechanism','Every transaction structure certified by the SSB before execution'],
+    risks:'Commodity price risk, counterparty risk in the Murabaha / Salam chain, storage and settlement risk on physical transactions, Shariah reclassification risk and purification risk.'
+  },
+  {
+    id:'green', name:'Green Shariah Fund', tag:'Halal growth aligned with environmental sustainability', contract:'Wakalah + Mudarabah', risk:'Medium to High',
+    blurb:'Environmentally sustainable assets that are also Shariah-compliant: green Sukuk, screened sustainable equities, permissible real estate and impact investments.',
+    stats:[['Risk rating','Medium to High'],['Wakalah fee','5% p.a. prorated'],['Lock-in','6 months'],['Perf. charge','Above hurdle only']],
+    objective:'The Fund invests in environmentally sustainable assets that are also Shariah-compliant: green Sukuk, Islamic government securities with green mandates, Islamic certificates of deposit, Shariah-screened international equities and funds with green mandates, permissible real estate, private equity and impact investments selected for both environmental impact and Shariah compliance.',
+    glance:[['Shariah contract','Wakalah (agency) + Mudarabah (profit-sharing)'],['Risk rating','Medium to High'],['Currency classes','KES and USD'],['Min. initial investment','KES 100,000 or USD 1,000'],['Min. top-up','KES 50,000 or USD 500'],['Lock-in period','6 months from initial investment'],['Wakalah fee','5% p.a., prorated over 365 days'],['Performance charge (KES)','10% on returns above a 25% hurdle rate'],['Performance charge (USD)','15% on returns above a 15% hurdle rate'],['Liquidity','Redeemable after lock-in with no exit fee'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Your capital supports environmentally sustainable projects, screened for green credentials and Shariah compliance','Diversification across green Sukuk, sustainable equities and impact investments','Maqasid al-Shariah scoring reinforces environmental criteria under the Preservation of Life pillar','Continuous SSB oversight and built-in purification','Green Sukuk proceeds must be earmarked for climate and environmental projects'],
+    risks:'Market risk, green-premium valuation risk, Shariah reclassification risk, concentration risk from combining green and Shariah screens, and purification risk.'
+  },
+  {
+    id:'lease', name:'Islamic Lease (Ijarah) ETF', tag:'Diversified halal income from leased assets and lease-backed Sukuk', contract:'Ijarah (lease)', risk:'Medium',
+    blurb:'A diversified basket of lease contracts and lease-backed Sukuk over equipment, vehicles, aircraft and real estate, each certified by the SSB.',
+    stats:[['Risk rating','Medium'],['Mgmt fee','1.5% p.a. (est.)'],['Redemption notice','30 days'],['Income','Distributed after expenses']],
+    objective:'The Fund holds a diversified basket of Ijarah (lease) contracts and lease-backed Sukuk over permissible underlying assets, providing diversified exposure to Ijarah-based income without concentrating in a single property type. Net lease income, after asset-related expenses and fees, is distributed pro-rata to your unit holding.',
+    glance:[['Shariah contract','Ijarah (lease); not Wakalah / Mudarabah'],['Risk rating','Medium'],['Currency classes','KES and USD'],['Min. investment','KES 100,000 or USD 1,000 (estimated, pending confirmation)'],['Initial / redemption fee','0% / 0%'],['Asset management fee','1.5% p.a. of NAV (estimated, pending SSB confirmation)'],['Income incentive','10% of net lease income above a 15% p.a. yield hurdle (estimated)'],['Redemption notice','Minimum 30 days'],['Liquidity','Lower than other products, reflecting the notice period'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Diversification within Ijarah across multiple leased-asset types','Regular income from net lease receipts','Every lease and lease-backed Sukuk certified by the SSB before inclusion','As lessor, the Fund bears major maintenance and Takaful costs, consistent with genuine Ijarah','A different risk and return profile from equity and Sukuk products'],
+    risks:'Asset value risk, lessee and counterparty risk, liquidity risk reflected in the 30-day notice period, ownership risk on directly-held assets, and Shariah structuring risk.'
+  },
+  {
+    id:'reit', name:'Islamic Real Estate (REIT) Fund', tag:'Halal rental income from real, tangible property', contract:'Ijarah (lease)', risk:'Medium',
+    blurb:'Acquires or constructs permissible real estate and leases it under Ijarah, earning rental income (Ujrah) for distribution to investors.',
+    stats:[['Risk rating','Medium'],['Mgmt fee','1.5% p.a. (est.)'],['Redemption notice','30 days'],['Income','Net rental, distributed']],
+    objective:'The Fund acquires or constructs permissible real estate and leases it to tenants under an Ijarah structure, earning rental income (Ujrah) for distribution. You hold units representing a proportional beneficial interest in the pool of leased properties and the rental income they generate.',
+    glance:[['Shariah contract','Ijarah (lease); not Wakalah / Mudarabah'],['Risk rating','Medium'],['Currency classes','KES and USD'],['Min. investment','KES 100,000 or USD 1,000 (estimated, pending confirmation)'],['Initial / redemption fee','0% / 0%'],['Asset / property management fee','1.5% p.a. of NAV (estimated, pending SSB confirmation)'],['Rental incentive','10% of net rental income above a 15% p.a. rental-yield hurdle (estimated)'],['Redemption notice','Minimum 30 days'],['Liquidity','Lower than other products, reflecting underlying real estate'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Investment backed by actual property, not a financial promise','Regular rental income distributed after property expenses and fees','Properties and tenancies certified Shariah-compliant before acquisition','The Fund, not the tenant, bears major structural maintenance and Takaful','Real estate adds a further diversification layer to a broader portfolio'],
+    risks:'Asset value risk with valuations that may lag the market, vacancy and tenant default risk, liquidity risk from the 30-day notice period, ownership risk, and Shariah structuring risk.'
+  },
+  {
+    id:'hedging', name:'Islamic Hedging (Wa’d)', tag:'Shariah-compliant risk management through Wa’d', contract:'Wa’d (unilateral binding promise)', risk:'Depends on exposure',
+    blurb:'A Shariah-compliant mechanism for managing an identified risk exposure, such as currency risk, using a unilateral binding promise rather than a conventional forward, option or swap.',
+    stats:[['Purpose','Risk management'],['Contract','Wa’d promise'],['Classes','KES and USD'],['Fees','Per Master Terms']],
+    objective:'Islamic Hedging provides a Shariah-compliant mechanism for managing an identified risk exposure, for example currency risk on foreign-currency assets in a KES-denominated portfolio, using a Wa’d (unilateral, binding promise). It is a risk-management tool, not a pooled investment, and does not generate a profit share in the way the Fund’s other products do.',
+    glance:[['Purpose','Hedging an identified risk exposure; not a pooled investment fund'],['Shariah contract','Wa’d (unilateral, binding promise)'],['Risk rating','Depends on the underlying exposure being hedged'],['Currency classes','KES and USD'],['Fees','Distinct arrangement fee or spread; see the Islamic Hedging Master Terms'],['Availability','Wa’d-based hedging only; other techniques not yet authorised'],['Regulated by','Capital Markets Authority, Kenya']],
+    why:['Avoids the two-sided binding exchange obligation and excessive uncertainty (Gharar) of conventional forwards and options','Each Wa’d is sized to the genuine underlying exposure it hedges','Certified in advance by the SSB, with transparent mechanics','Usable within another IIB Falāh portfolio or as a standalone arrangement'],
+    risks:'Counterparty risk on the promisor, basis risk if the hedge does not perfectly offset the exposure, structuring risk requiring unwind if a Wa’d becomes two-sided in substance, and no guaranteed outcome: hedging reduces risk but does not eliminate it.'
+  }
+];
+
+/* ================= Build product pages, cards, menus ================= */
+function glanceTable(rows){return '<table>'+rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')+'</table>';}
+function buildProductPages(){
+  const main=document.getElementById('pages');
+  PRODUCTS.forEach(p=>{
+    const sec=document.createElement('section');
+    sec.className='page';
+    sec.id='page-prod-'+p.id;
+    sec.innerHTML=`
+    <div class="page-hero"><div class="container inner">
+      <div class="crumb"><a href="#/products">Products</a> · ${p.contract}</div>
+      <h1>Investcent <em>${p.name}</em></h1>
+      <p>${p.tag}. Certified by the Shariah Supervisory Board and regulated by the Capital Markets Authority, Kenya.</p>
+      <div class="fund-meta">${p.stats.map(s=>`<span>${s[0]}: ${s[1]}</span>`).join('')}</div>
+    </div></div>
+    <section class="section">
+      <div class="container">
+        <div class="objective-box reveal"><h3>Investment objective</h3><p>${p.objective}</p></div>
+        <div class="detail-grid">
+          <div class="glance-card reveal"><div class="fh"><small>At a glance</small><h3>${p.name}</h3></div>${glanceTable(p.glance)}</div>
+          <div class="why-list reveal"><h3>Why invest</h3><ul>${p.why.map(w=>`<li>${w}</li>`).join('')}</ul></div>
+        </div>
+        <p class="risk-note reveal"><b>Key risks:</b> ${p.risks} This is a summary only; please read the full risk disclosure in the Shariah Information Memorandum before investing.</p>
+        <div class="cta-band reveal" style="margin-top:36px">
+          <div><h3>Invest in the ${p.name}</h3><p>Complete the IIB Falāh account opening and application forms to begin.</p></div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;position:relative">
+            <a href="#/contact" class="btn btn-primary">Invest Now</a>
+            <a href="#/faqs" class="btn btn-ghost on-dark">How to Invest</a>
+          </div>
+        </div>
+      </div>
+    </section>`;
+    main.appendChild(sec);
+  });
+}
+function prodCard(p){
+  return `<a class="fund-card reveal" href="#/prod-${p.id}">
+    <h3>${p.name}</h3>
+    <div class="sub">KES &amp; USD · ${p.contract}</div>
+    <p>${p.blurb}</p>
+    <div class="fund-stats">${p.stats.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join('')}</div>
+    <span class="link">View product details →</span>
+  </a>`;
+}
+function renderProducts(){
+  const html=PRODUCTS.map(prodCard).join('');
+  document.getElementById('homeProdGrid').innerHTML=html;
+  document.getElementById('prodPageGrid').innerHTML=html;
+  document.getElementById('prodMenu').innerHTML='<a href="#/products">All Products Overview</a>'+PRODUCTS.map(p=>`<a href="#/prod-${p.id}">${p.name}</a>`).join('');
+  document.getElementById('footProds').innerHTML=PRODUCTS.map(p=>`<a href="#/prod-${p.id}">${p.name}</a>`).join('');
+  const sel=document.getElementById('prodSelect');
+  PRODUCTS.forEach(p=>{const o=document.createElement('option');o.textContent=p.name;sel.appendChild(o);});
+  const o=document.createElement('option');o.textContent='General enquiry / Shariah governance';sel.appendChild(o);
+}
+
+/* ================= Router ================= */
+function navigate(){
+  const h=(location.hash||'#/home').replace(/^#\/?/,'');
+  const [pg,sub]=h.split('/');
+  const target=document.getElementById('page-'+(pg||'home'))||document.getElementById('page-home');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  target.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  observeReveals();
+  if(sub){setTimeout(()=>{const el=document.getElementById(sub);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});},120);}
+  else{window.scrollTo({top:0,behavior:'auto'});}
+}
+window.addEventListener('hashchange',navigate);
+
+/* ================= Misc ================= */
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target)}});
+},{threshold:.1});
+function observeReveals(){
+  document.querySelectorAll(".page.active .reveal:not(.visible)").forEach(el=>io.observe(el));
+}
+
+/* init */
+buildProductPages();
+renderProducts();
+navigate();
+</script>
+</body>
+</html>
