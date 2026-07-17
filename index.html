@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investcent Investment Bank | Investment Banking For You</title>
+<meta name="description" content="Investcent Investment Bank: boutique investment bank and active fund manager in Nairobi. Money market, multi-asset and green funds, pension mandates, SMAs, advisory and brokerage. Licensed by the CMA, RBA and NSE.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cyan:#0693e3;
+  --cyan-deep:#0577B5;
+  --cyan-soft:#E3F1FB;
+  --cyan-mist:#F2F8FD;
+  --ink:#1a1c23;
+  --navy:#0E2A3F;
+  --slate:#51606E;
+  --line:#E3EBF1;
+  --gold:#C9A227;
+  --green:#1E9E6A;
+  --white:#FFFFFF;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --shadow:0 18px 50px rgba(10,22,34,.10);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--white);line-height:1.65;font-size:16px}
+img{max-width:100%}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.15}
+.container{max-width:1180px;margin:0 auto;padding:0 24px}
+.serif{font-family:var(--serif)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--cyan-deep)}
+.eyebrow::before{content:"";width:34px;height:2px;background:var(--gold)}
+.section{padding:58px 0}
+.section-head{max-width:720px;margin-bottom:34px}
+.section-head h2{font-family:var(--serif);font-size:clamp(32px,4vw,46px);font-weight:600;margin:14px 0 16px}
+.section-head p{color:var(--slate);font-size:17px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;transition:.25s;cursor:pointer;border:none}
+.btn-primary{background:var(--cyan);color:#fff;box-shadow:0 10px 24px rgba(6,147,227,.35)}
+.btn-primary:hover{background:var(--cyan-deep);transform:translateY(-2px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.45);color:#fff;background:transparent}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-dark:hover{background:#22252E;transform:translateY(-2px)}
+
+/* ---------- Pages (router) ---------- */
+.page{display:none}
+.page.active{display:block;animation:pageIn .4s ease}
+@keyframes pageIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.page-hero{background:linear-gradient(135deg,#1a1c23 0%,#22252E 55%,#2A2E39 100%);color:#fff;position:relative;overflow:hidden}
+.page-hero::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 320px at 88% 10%,rgba(6,147,227,.26),transparent 62%)}
+.page-hero .inner{position:relative;padding:46px 0 40px}
+.page-hero .crumb{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:#7FC5F5;font-weight:700;margin-bottom:14px}
+.page-hero h1{font-family:var(--serif);font-size:clamp(34px,4.6vw,54px);font-weight:600;max-width:760px}
+.page-hero h1 em{font-style:italic;color:var(--cyan)}
+.page-hero p{color:#B9CEDC;font-size:17px;max-width:640px;margin-top:16px}
+
+/* ---------- Ticker ---------- */
+.ticker{background:var(--ink);color:#cfe8f5;font-size:13px;overflow:hidden;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:stretch}
+.ticker-label{flex:none;display:flex;align-items:center;gap:8px;background:var(--cyan);color:#062232;font-weight:800;font-size:11.5px;letter-spacing:.1em;padding:0 16px;z-index:2}
+.ticker-label .dot{width:7px;height:7px;border-radius:50%;background:#062232;animation:pulse 1.6s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.ticker-scroll{overflow:hidden;flex:1}
+.ticker-track{display:inline-block;padding:9px 0;animation:tick 55s linear infinite}
+.ticker-track span{margin:0 26px}
+.ticker-track b{color:#fff;font-weight:700}
+.ticker-track em{font-style:normal;color:var(--cyan);font-weight:700}
+.tk-up{color:#3DD68C;font-weight:700}
+.tk-down{color:#FF7A7A;font-weight:700}
+.tk-flat{color:#9DB7C7;font-weight:700}
+@keyframes tick{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ---------- Nav ---------- */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:11px}
+.logo-mark{display:flex;align-items:center;color:var(--navy)}
+.logo-mark svg{display:block}
+.logo-text{line-height:1.05}
+.logo-text b{display:block;font-size:18px;letter-spacing:.06em;font-weight:800;color:var(--cyan)}
+.logo-text small{font-size:9.5px;letter-spacing:.3em;color:var(--navy);font-weight:700}
+.nav-links{display:flex;gap:30px;align-items:center;font-size:15px;font-weight:500}
+.nav-links>a,.drop-toggle{color:var(--slate);transition:.2s;position:relative;padding:26px 0;display:inline-flex;align-items:center;gap:6px;cursor:pointer;white-space:nowrap}
+.nav-links>a:hover,.dropdown:hover .drop-toggle{color:var(--ink)}
+.nav-links>a::after,.drop-toggle::after{content:"";position:absolute;left:0;bottom:18px;width:0;height:2px;background:var(--cyan);transition:.25s}
+.nav-links>a:hover::after,.dropdown:hover .drop-toggle::after{width:100%}
+.caret{font-size:10px;color:var(--cyan-deep);transition:.25s}
+.dropdown:hover .caret{transform:rotate(180deg)}
+.dropdown{position:relative}
+.dropdown-menu{position:absolute;top:100%;left:-14px;min-width:260px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 0;opacity:0;visibility:hidden;transform:translateY(10px);transition:.22s;z-index:120}
+.dropdown:hover .dropdown-menu{opacity:1;visibility:visible;transform:translateY(2px)}
+.dropdown-menu a{display:block;padding:10px 22px;font-size:14px;color:var(--slate);transition:.15s}
+.dropdown-menu a:hover{background:var(--cyan-mist);color:var(--ink);padding-left:26px}
+.has-sub{position:relative}
+.has-sub>a{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.sub-caret{font-size:9px;color:var(--cyan-deep);flex:none}
+.sub-menu{position:absolute;top:-11px;left:100%;min-width:260px;background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:10px 0;opacity:0;visibility:hidden;transform:translateX(10px);transition:.22s;z-index:130}
+.has-sub:hover .sub-menu{opacity:1;visibility:visible;transform:translateX(2px)}
+.falah-link{color:#0E7A5A !important;font-weight:700}
+.falah-link::after{background:#0E7A5A !important}
+.nav-cta{display:flex;gap:14px;align-items:center}
+.nav-cta .portal{font-size:14px;font-weight:600;color:var(--cyan-deep);white-space:nowrap}
+.hamburger{display:none;background:none;border:none;font-size:26px;cursor:pointer;color:var(--ink)}
+@media(max-width:1080px){
+  .nav-links{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;align-items:flex-start;padding:20px 24px;gap:2px;border-bottom:1px solid var(--line);box-shadow:var(--shadow);max-height:calc(100vh - 76px);overflow:auto}
+  .nav-links.open{display:flex}
+  .nav-links>a,.drop-toggle{padding:12px 0;font-weight:700;color:var(--ink)}
+  .nav-links>a::after,.drop-toggle::after{display:none}
+  .dropdown{width:100%}
+  .dropdown-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 8px 14px;min-width:0}
+  .dropdown-menu a{padding:8px 0}
+  .dropdown-menu a:hover{background:none;padding-left:4px}
+  .sub-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:none;padding:0 0 4px 16px;min-width:0}
+  .sub-caret{display:none}
+  .caret{display:none}
+  .hamburger{display:block}
+  .nav-cta .portal{display:none}
+}
+
+/* ---------- Hero (home) ---------- */
+.hero{position:relative;background:linear-gradient(135deg,#1a1c23 0%,#22252E 55%,#2A2E39 100%);color:#fff;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(700px 380px at 85% 15%,rgba(6,147,227,.28),transparent 65%),
+  radial-gradient(520px 320px at 8% 92%,rgba(201,162,39,.14),transparent 60%)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:48px 0 52px}
+.hero h1{font-family:var(--serif);font-size:clamp(42px,5.6vw,66px);font-weight:600;margin:22px 0 20px}
+.hero h1 em{font-style:italic;color:var(--cyan)}
+.hero p.lead{font-size:18px;color:#B9CEDC;max-width:540px;margin-bottom:34px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+.hero-trust{margin-top:46px;display:flex;gap:34px;flex-wrap:wrap;font-size:13px;color:#9DB7C7}
+.hero-trust b{display:block;font-size:22px;color:#fff;font-family:var(--serif)}
+.hero-card{position:relative;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:30px;backdrop-filter:blur(8px)}
+.hero-card h3{font-size:13px;letter-spacing:.2em;text-transform:uppercase;color:#9DB7C7;margin-bottom:18px}
+.rate-row{display:flex;justify-content:space-between;align-items:center;padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:14.5px;gap:10px}
+.rate-row:last-child{border-bottom:none}
+.rate-row .val{font-weight:700;color:var(--cyan);font-size:15px;white-space:nowrap}
+.hero-card .note{font-size:11.5px;color:#8AA5B5;margin-top:14px}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;padding:64px 0 56px}}
+
+/* ---------- Pillars ---------- */
+.pillars{background:var(--cyan-mist);border-bottom:1px solid var(--line)}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding:38px 0}
+.pillar h4{font-size:15.5px;margin:10px 0 6px}
+.pillar p{font-size:13.5px;color:var(--slate)}
+.pillar .ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(10,22,34,.05)}
+@media(max-width:900px){.pillars-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.pillars-grid{grid-template-columns:1fr}}
+
+/* ---------- Fund cards ---------- */
+.currency-toggle{display:inline-flex;background:var(--cyan-soft);border-radius:999px;padding:5px;margin-bottom:34px}
+.currency-toggle button{border:none;background:transparent;padding:10px 26px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;color:var(--cyan-deep);transition:.25s;font-family:var(--sans)}
+.currency-toggle button.active{background:var(--cyan);color:#fff;box-shadow:0 6px 16px rgba(6,147,227,.35)}
+.fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.fund-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;transition:.3s;position:relative;background:#fff}
+.fund-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#B9DCF8}
+.fund-card .badge{position:absolute;top:22px;right:22px;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:999px}
+.badge.low{background:#E7F7EF;color:var(--green)}
+.badge.high{background:#FDF0E4;color:#C2691B}
+.badge.exclusive{background:#F6EEDA;color:#8A6D14}
+.fund-card .ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:24px;margin-bottom:20px}
+.ic.blue{background:var(--cyan-soft)}
+.ic.greenbg{background:#E7F7EF}
+.ic.goldbg{background:#F6EEDA}
+.fund-card h3{font-family:var(--serif);font-size:23px;font-weight:600;margin-bottom:8px}
+.fund-card .sub{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-deep);font-weight:700;margin-bottom:12px}
+.fund-card p{font-size:14.5px;color:var(--slate);flex:1}
+.fund-stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:20px 0}
+.fund-stats div{background:var(--cyan-mist);border-radius:12px;padding:11px 14px}
+.fund-stats small{display:block;font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--slate)}
+.fund-stats b{font-size:14px}
+.fund-card .link{font-weight:700;color:var(--cyan-deep);font-size:14px;display:inline-flex;align-items:center;gap:8px;cursor:pointer}
+.fund-card .link:hover{gap:12px}
+@media(max-width:960px){.fund-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.fund-grid{grid-template-columns:1fr}}
+
+/* ---------- Fund detail pages ---------- */
+.fund-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px;position:relative}
+.fund-meta span{font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;background:rgba(6,147,227,.16);color:#7FC5F5;border:1px solid rgba(6,147,227,.35)}
+.fund-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start}
+.fund-table-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff}
+.fund-table-card .fh{background:linear-gradient(120deg,#22252E,#2A2E39);color:#fff;padding:18px 26px}
+.fund-table-card .fh small{color:#7FC5F5;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
+.fund-table-card .fh h3{font-size:17px;margin-top:2px}
+.fund-table-card table{width:100%;border-collapse:collapse;font-size:13.5px}
+.fund-table-card td{padding:10.5px 26px;border-bottom:1px solid var(--line)}
+.fund-table-card td:first-child{color:var(--slate);width:46%}
+.fund-table-card td:last-child{font-weight:600}
+.fund-table-card tr:last-child td{border-bottom:none}
+.objective-box{background:var(--cyan-mist);border:1px solid var(--line);border-radius:var(--radius);padding:28px 30px;margin-bottom:34px}
+.objective-box h3{font-family:var(--serif);font-size:22px;font-weight:600;margin-bottom:10px}
+.objective-box p{color:var(--slate);font-size:15px}
+@media(max-width:860px){.fund-detail-grid{grid-template-columns:1fr}}
+
+/* ---------- Calculator ---------- */
+.calc{background:linear-gradient(135deg,#1a1c23,#22252E 60%,#2A2E39);color:#fff;position:relative;overflow:hidden}
+.calc::before{content:"";position:absolute;inset:0;background:radial-gradient(600px 340px at 90% 20%,rgba(6,147,227,.22),transparent 60%)}
+.calc-grid{position:relative;display:grid;grid-template-columns:.85fr 1.15fr;gap:32px;align-items:center}
+.calc .section-head h2{color:#fff}
+.calc .section-head p{color:#B9CEDC}
+.calc .eyebrow{color:var(--cyan)}
+.calc-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px 28px;backdrop-filter:blur(8px)}
+.calc-panel label{display:flex;justify-content:space-between;font-size:13.5px;color:#B9CEDC;margin:14px 0 6px;font-weight:600}
+.calc-panel label output{color:#fff;font-weight:700}
+.calc-panel input[type=range]{width:100%;accent-color:var(--cyan)}
+.calc-result{margin-top:20px;background:rgba(6,147,227,.14);border:1px solid rgba(6,147,227,.35);border-radius:16px;padding:15px;text-align:center}
+.calc-result small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7FC5F5;font-weight:700}
+.calc-result b{display:block;font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);margin-top:6px}
+.calc-result span{font-size:13px;color:#B9CEDC}
+.calc-note{font-size:11.5px;color:#8AA5B5;margin-top:16px}
+@media(max-width:900px){.calc-grid{grid-template-columns:1fr}}
+
+/* ---------- Services page ---------- */
+.svc-block{padding:72px 0;border-bottom:1px solid var(--line)}
+.svc-block:nth-child(even){background:var(--cyan-mist)}
+.svc-grid{display:grid;grid-template-columns:.42fr .58fr;gap:50px;align-items:start}
+.svc-grid .ic-lg{width:62px;height:62px;border-radius:16px;background:var(--cyan-soft);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:18px}
+.svc-grid h2{font-family:var(--serif);font-size:clamp(28px,3.4vw,38px);font-weight:600;margin-bottom:8px}
+.svc-grid .tagline{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--cyan-deep);font-weight:700}
+.svc-body p{color:var(--slate);font-size:15.5px;margin-bottom:16px}
+.svc-body ul{list-style:none;margin:6px 0 16px}
+.svc-body li{padding:9px 0 9px 30px;position:relative;font-size:14.5px;color:var(--ink);border-bottom:1px dashed var(--line)}
+.svc-body li::before{content:"✓";position:absolute;left:2px;color:var(--cyan);font-weight:800}
+@media(max-width:860px){.svc-grid{grid-template-columns:1fr;gap:20px}}
+
+/* ---------- Mandates & edge ---------- */
+.mandate-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-bottom:26px}
+.mandate-card{border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;background:#fff;transition:.3s;position:relative}
+.mandate-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#B9DCF8}
+.mandate-card .rba{display:inline-block;font-size:10.5px;font-weight:800;letter-spacing:.12em;color:var(--cyan-deep);background:var(--cyan-soft);padding:5px 12px;border-radius:999px;margin-bottom:16px}
+.mandate-card h3{font-family:var(--serif);font-size:26px;font-weight:600;margin-bottom:10px}
+.mandate-card p{font-size:14.5px;color:var(--slate)}
+.edge-band{background:linear-gradient(120deg,#22252E,#2A2E39);color:#fff;border-radius:var(--radius);padding:40px 38px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.edge-band::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 280px at 90% 10%,rgba(6,147,227,.25),transparent 60%)}
+.edge-band h3{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:600;position:relative}
+.edge-band h3 em{font-style:italic;color:var(--cyan)}
+.edge-band p{color:#B9CEDC;font-size:14.5px;margin-top:12px;position:relative}
+.edge-points{position:relative;display:grid;gap:14px}
+.edge-points div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:12px;padding:14px 18px;font-size:13.5px}
+.edge-points b{color:#7FC5F5;display:block;font-size:13px;letter-spacing:.04em}
+.asset-chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;position:relative}
+.asset-chips span{font-size:12px;font-weight:700;padding:7px 16px;border-radius:999px;background:rgba(6,147,227,.16);color:#7FC5F5;border:1px solid rgba(6,147,227,.35)}
+@media(max-width:900px){.mandate-grid,.edge-band{grid-template-columns:1fr}}
+
+/* ---------- Advisory ---------- */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.adv-card{border-left:3px solid var(--cyan);background:#fff;border-radius:0 16px 16px 0;padding:26px 24px;box-shadow:0 4px 14px rgba(10,22,34,.05);transition:.25s}
+.adv-card:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-left-color:var(--gold)}
+.adv-card h4{font-size:16px;margin-bottom:8px}
+.adv-card p{font-size:13.5px;color:var(--slate)}
+@media(max-width:900px){.adv-grid{grid-template-columns:1fr}}
+
+/* ---------- Why / values ---------- */
+.why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:why}
+.why-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px}
+.why-item::before{counter-increment:why;content:"0" counter(why);font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold)}
+.why-item h4{font-size:15px;margin:10px 0 8px}
+.why-item p{font-size:13px;color:var(--slate)}
+@media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.why-grid{grid-template-columns:1fr}}
+.values-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.values-strip span{font-size:13px;font-weight:700;padding:9px 20px;border-radius:999px;background:var(--cyan-soft);color:var(--cyan-deep)}
+
+/* ---------- Team / board ---------- */
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.team-card{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.3s}
+.team-card:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.team-photo{height:110px;background:linear-gradient(120deg,#22252E,#2A2E39);display:flex;align-items:flex-end;padding:0 26px}
+.avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--cyan-deep));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;border:4px solid #fff;transform:translateY(36px)}
+.team-body{padding:50px 26px 26px}
+.team-body h4{font-size:17px}
+.team-body .role{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan-deep);font-weight:700;margin:3px 0 10px}
+.team-body p{font-size:13.5px;color:var(--slate)}
+@media(max-width:900px){.team-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.team-grid{grid-template-columns:1fr}}
+.ceo-band{display:grid;grid-template-columns:auto 1fr;gap:34px;align-items:center;background:linear-gradient(120deg,#22252E,#2A2E39);border-radius:var(--radius);padding:40px 44px;color:#fff;margin-bottom:40px}
+.ceo-band .avatar-lg{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--cyan),var(--cyan-deep));display:flex;align-items:center;justify-content:center;font-weight:800;font-size:30px;border:4px solid rgba(255,255,255,.25)}
+.ceo-band blockquote{font-family:var(--serif);font-size:clamp(19px,2.4vw,25px);font-style:italic;line-height:1.45}
+.ceo-band cite{display:block;font-family:var(--sans);font-style:normal;font-size:13.5px;color:#7FC5F5;margin-top:14px;font-weight:700}
+.ceo-band cite span{color:#9DB7C7;font-weight:500}
+@media(max-width:700px){.ceo-band{grid-template-columns:1fr}}
+
+/* ---------- Certifications ---------- */
+.cert-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px}
+.cert-card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 20px;text-align:center;transition:.25s}
+.cert-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.cert-card .seal{width:58px;height:58px;margin:0 auto 14px;border-radius:50%;background:var(--cyan-soft);border:2px solid var(--cyan);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:12.5px;color:var(--cyan-deep);letter-spacing:.02em}
+.cert-card.gold .seal{background:#F6EEDA;border-color:var(--gold);color:#8A6D14}
+.cert-card b{display:block;font-size:13.5px;margin-bottom:6px}
+.cert-card small{font-size:12px;color:var(--slate)}
+@media(max-width:1000px){.cert-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cert-grid{grid-template-columns:1fr}}
+
+/* ---------- Insights / articles / media ---------- */
+.insights-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.article{border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:#fff;transition:.3s;display:flex;flex-direction:column}
+.article:hover{transform:translateY(-6px);box-shadow:var(--shadow)}
+.article-img{height:88px}
+.ai-1{background:linear-gradient(120deg,#2A2E39,var(--navy))}
+.ai-2{background:linear-gradient(120deg,#0B5E43,#1E9E6A)}
+.ai-3{background:linear-gradient(120deg,#8A6D14,var(--gold))}
+.article-body{padding:24px 26px 26px;display:flex;flex-direction:column;flex:1}
+.article-body .meta{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan-deep);font-weight:700;margin-bottom:10px}
+.article-body h3{font-family:var(--serif);font-size:21px;font-weight:600;margin-bottom:10px}
+.article-body p{font-size:14px;color:var(--slate);flex:1}
+.article-body .read{margin-top:16px;font-weight:700;font-size:13.5px;color:var(--cyan-deep)}
+@media(max-width:900px){.insights-grid{grid-template-columns:1fr}}
+.media-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.media-card{border-radius:var(--radius);overflow:hidden;position:relative;height:200px;display:flex;align-items:flex-end;padding:20px;color:#fff;cursor:pointer;transition:.3s}
+.media-card:hover{transform:translateY(-5px)}
+.media-card::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(7,20,31,.85))}
+.media-card .play{position:absolute;top:16px;left:16px;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.9);color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:13px}
+.media-card span{position:relative;font-size:14px;font-weight:600;line-height:1.4}
+.mc-1{background:linear-gradient(140deg,#2A2E39,#0693e3)}
+.mc-2{background:linear-gradient(140deg,#123A2C,#1E9E6A)}
+.mc-3{background:linear-gradient(140deg,#3A2E0B,#C9A227)}
+.mc-4{background:linear-gradient(140deg,#1a1c23,#51606E)}
+@media(max-width:900px){.media-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.media-grid{grid-template-columns:1fr}}
+.research-list{display:grid;gap:14px}
+.research-item{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px 24px;display:flex;gap:18px;align-items:center;transition:.25s}
+.research-item:hover{border-color:#B9DCF8;box-shadow:0 8px 20px rgba(10,22,34,.06)}
+.research-item .ic{font-size:24px}
+.research-item b{font-size:15px;display:block}
+.research-item small{font-size:12.5px;color:var(--slate)}
+.research-item .dl{margin-left:auto;font-weight:700;color:var(--cyan-deep);font-size:13px;white-space:nowrap}
+
+/* ---------- FAQ ---------- */
+details{background:#fff;border:1px solid var(--line);border-radius:14px;margin-bottom:12px;overflow:hidden}
+details summary{padding:18px 22px;font-weight:600;font-size:15px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:14px}
+details summary::after{content:"+";font-size:22px;color:var(--cyan);font-weight:400;transition:.2s;flex:none}
+details[open] summary::after{transform:rotate(45deg)}
+details .faq-body{padding:0 22px 18px;font-size:14px;color:var(--slate)}
+
+/* ---------- Contact & payments ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact-info h3{font-family:var(--serif);font-size:26px;margin-bottom:20px;font-weight:600}
+.c-row{display:flex;gap:16px;margin-bottom:20px;font-size:14.5px}
+.c-row .ic{width:42px;height:42px;flex:none;border-radius:12px;background:var(--cyan-soft);display:flex;align-items:center;justify-content:center;font-size:18px}
+.c-row b{display:block;font-size:14px}
+.c-row span{color:var(--slate);font-size:13.5px}
+form .row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+input,select,textarea{width:100%;padding:14px 16px;border:1.5px solid var(--line);border-radius:12px;font-family:var(--sans);font-size:14.5px;margin-bottom:16px;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--cyan)}
+@media(max-width:900px){.contact-grid{grid-template-columns:1fr}form .row{grid-template-columns:1fr}}
+.bank-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.bank-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);background:#fff}
+.bank-card .bank-head{background:linear-gradient(120deg,#22252E,#2A2E39);color:#fff;padding:22px 28px}
+.bank-card .bank-head h3{font-size:18px}
+.bank-card .bank-head small{color:#7FC5F5;font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.bank-card table{width:100%;border-collapse:collapse;font-size:14px}
+.bank-card td{padding:12px 28px;border-bottom:1px solid var(--line)}
+.bank-card td:first-child{color:var(--slate);font-size:12px;letter-spacing:.06em;text-transform:uppercase;width:42%}
+.bank-card td:last-child{font-weight:600}
+.bank-card .ref{background:var(--cyan-soft);font-weight:700}
+.bank-note{margin-top:26px;background:#22252E;color:#B9CEDC;border-radius:14px;padding:20px 26px;font-size:13.5px}
+.bank-note b{color:#7FC5F5}
+@media(max-width:820px){.bank-grid{grid-template-columns:1fr}}
+.pay-embed .bank-note{margin-top:22px}
+.compact .bank-grid{grid-template-columns:1fr;gap:14px}
+.compact .bank-card table{font-size:12px}
+.compact .bank-card td{padding:7px 18px}
+.compact .bank-card .bank-head{padding:12px 18px}
+.compact .bank-card .bank-head h3{font-size:14.5px}
+.map-pay-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:26px;align-items:stretch}
+.map-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);min-height:420px;background:#fff}
+.map-card iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+@media(max-width:860px){.map-pay-grid{grid-template-columns:1fr}}
+.socials{display:flex;gap:10px;margin-top:20px}
+.socials a{width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;font-size:15px;font-weight:700;color:#B9CEDC;transition:.2s}
+.socials a:hover{background:var(--cyan);border-color:var(--cyan);color:#fff;transform:translateY(-2px)}
+
+/* ---------- CTA band ---------- */
+.cta-band{background:linear-gradient(120deg,#22252E,#2A2E39);color:#fff;border-radius:var(--radius);padding:48px 44px;display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;position:relative;overflow:hidden}
+.cta-band::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 240px at 90% 20%,rgba(6,147,227,.25),transparent 60%)}
+.cta-band h3{font-family:var(--serif);font-size:clamp(24px,3vw,34px);font-weight:600;position:relative}
+.cta-band p{color:#B9CEDC;font-size:14.5px;margin-top:6px;position:relative}
+.cta-band .btn{position:relative}
+
+/* ---------- Footer ---------- */
+footer{background:var(--ink);color:#9DB7C7;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:44px;padding:70px 0 50px}
+.foot-grid h5{color:#fff;font-size:13px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:18px}
+.foot-grid a{display:block;margin-bottom:11px;transition:.2s;font-size:13.5px}
+.foot-grid a:hover{color:var(--cyan)}
+.foot-brand p{font-size:13.5px;margin-top:16px;max-width:300px}
+.foot-legal{border-top:1px solid rgba(255,255,255,.1);padding:26px 0;font-size:12px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.reg-strip{background:#16181F;padding:18px 0;font-size:12.5px;color:#7E97A8;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:900px){.foot-grid{grid-template-columns:1fr 1fr}}
+
+.disclaimer{font-size:12px;color:var(--slate);background:var(--cyan-mist);border:1px solid var(--line);border-radius:12px;padding:16px 20px;margin-top:40px}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<!-- NSE live stocks ticker -->
+<div class="ticker" aria-label="NSE market prices">
+  <div class="ticker-label"><span class="dot"></span>NSE MARKET</div>
+  <div class="ticker-scroll"><div class="ticker-track" id="tickerTrack"></div></div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="container nav-inner">
+    <a href="#/home" class="logo">
+      <div class="logo-mark"><svg viewBox="0 0 62 46" width="50" height="37" aria-hidden="true"><circle cx="18" cy="28" r="12.5" fill="none" stroke="currentColor" stroke-width="4.6"/><circle cx="37" cy="23" r="16.5" fill="none" stroke="currentColor" stroke-width="4.6"/><path d="M28 33 L45 16 M36.5 16 H45 V24.5" fill="none" stroke="var(--cyan)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="logo-text"><b>INVESTCENT</b><small>INVESTMENT BANK</small></div>
+    </a>
+    <div class="nav-links" id="navLinks">
+      <a href="#/home">Home</a>
+      <div class="dropdown">
+        <span class="drop-toggle">About Us <span class="caret">▼</span></span>
+        <div class="dropdown-menu">
+          <a href="#/about">About Us</a>
+          <a href="#/about/about-why">Why Investcent</a>
+          <a href="#/about/about-leadership">Leadership &amp; Governance</a>
+          <a href="#/careers">Careers</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span class="drop-toggle">Services <span class="caret">▼</span></span>
+        <div class="dropdown-menu">
+          <a href="#/services/svc-pwm">Private Wealth Management</a>
+          <div class="has-sub">
+            <a href="#/services/svc-fm">Fund Management <span class="sub-caret">▶</span></a>
+            <div class="sub-menu">
+              <a href="#/services/svc-pension">Pension Funds</a>
+              <a href="#/services/svc-sma">Separately Managed Accounts</a>
+              <a href="#/services/svc-endowment">Endowment Fund Management</a>
+              <a href="#/services/svc-public">Public Funds Management</a>
+            </div>
+          </div>
+          <a href="#/services/svc-advisory">Advisory</a>
+          <a href="#/services/svc-brokerage">Brokerage</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span class="drop-toggle">Funds <span class="caret">▼</span></span>
+        <div class="dropdown-menu">
+          <a href="#/funds">All Funds Overview</a>
+          <a href="#/fund-mmf">Money Market Fund</a>
+          <a href="#/fund-masf">Multi-Asset Special Fund</a>
+          <a href="#/fund-hedge">IIB Alpha+ Private Hedge Fund</a>
+          <a href="#/fund-green">Green Fund</a>
+        </div>
+      </div>
+      <a href="iib-falah.html" class="falah-link">IIB Falāh <span style="font-size:11px">↗</span></a>
+      <div class="dropdown">
+        <span class="drop-toggle">Resources <span class="caret">▼</span></span>
+        <div class="dropdown-menu">
+          <a href="#/resources/res-calculator">Calculator</a>
+          <a href="#/resources/res-media">Media</a>
+          <a href="#/resources/res-articles">Articles</a>
+          <a href="#/resources/res-research">Research</a>
+        </div>
+      </div>
+      <a href="#/faqs">FAQs</a>
+      <a href="#/contact">Get in Touch</a>
+    </div>
+    <div class="nav-cta">
+      <a class="btn btn-primary" href="https://portal.investcent.co/en" target="_blank" rel="noopener" style="padding:11px 22px;font-size:14px">Invest Now</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<main id="pages">
+
+<!-- ================= HOME ================= -->
+<section class="page" id="page-home">
+  <header class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow" style="color:var(--cyan)">Boutique Investment Bank · Active Fund Manager · Nairobi</span>
+        <h1>Investment Banking <em>For You.</em></h1>
+        <p class="lead">In a market crowded with conventional thinking, Investcent stands apart. Experience the Investcent difference where rigorous research meets alternative innovation.</p>
+        <div class="hero-actions">
+          <a href="#/funds" class="btn btn-primary">Explore Our Funds</a>
+          <a href="#/services/svc-pension" class="btn btn-ghost">Pension Mandates</a>
+        </div>
+        <div class="hero-trust">
+          <div><b>2016</b>Founded as Investcent Partners;<br>investment bank since 2021</div>
+          <div><b>CMA · RBA</b>Fund manager, investment bank<br>&amp; pension mandates</div>
+          <div><b>NSE</b>Authorised Securities Dealer<br>with real-time execution</div>
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h3>Fund Snapshot</h3>
+        <a class="rate-row" href="#/fund-mmf"><span>Money Market Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/fund-masf"><span>Multi-Asset Special Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/fund-green"><span>Green Fund</span><span class="val">→</span></a>
+        <a class="rate-row" href="#/fund-hedge"><span>IIB Alpha+ Private Hedge Fund</span><span class="val">→</span></a>
+        <p class="note">Open any fund to view its full details. Returns are not guaranteed; daily yields are published on the client portal.</p>
+      </aside>
+    </div>
+  </header>
+
+  <section class="pillars">
+    <div class="container pillars-grid">
+      <div class="pillar"><h4>Conviction-Led Trading</h4><p>Passive matches the market. We aim to beat it, with high-conviction positions across asset classes, sized to a defined mandate.</p></div>
+      <div class="pillar"><h4>Real-Time Intelligence</h4><p>Proprietary macro and micro research drives every investment decision, capturing opportunity the market leaves on the table.</p></div>
+      <div class="pillar"><h4>Disciplined Risk</h4><p>Strict limits and oversight to protect capital while pursuing alpha. Prudent governance under CMA, RBA and NSE regulation.</p></div>
+      <div class="pillar"><h4>Certified Team</h4><p>CFA- and ICIFA-qualified investment professionals. Boutique attention with institutional discipline, directly accessible to every client.</p></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Fund Summary</span>
+        <h2>A fund for every stage of your wealth journey</h2>
+        <p>From foundational savings to complex multi-asset strategies, Investcent's goal is to partner with you at every stage of your wealth-building journey. Across our entire suite, every fund is actively managed and securely held in trust to safeguard and grow your capital. Open a fund to explore its structure and details.</p>
+      </div>
+      <div class="fund-grid" id="homeFundGrid"></div>
+      <p class="disclaimer reveal"><b>Important:</b> Capital is at risk and returns are not guaranteed. Past performance is not an indicator of future performance. Special funds carry a 180-day lock-in; see each fund's risk profile. Read each fund's Information Memorandum before investing.</p>
+    </div>
+  </section>
+
+  <section class="section calc" style="padding:38px 0">
+    <div class="container calc-grid">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Plan Ahead</span>
+        <h2>See what disciplined investing could do</h2>
+        <p>Model how regular contributions could grow with daily compounding. Adjust the assumptions to match your goals, then talk to us about making it real.</p>
+        <div style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap">
+          <a href="https://portal.investcent.co/en" target="_blank" rel="noopener" class="btn btn-primary">Invest Now</a>
+          <a href="#/contact" class="btn btn-ghost">Get in Touch →</a>
+        </div>
+      </div>
+      <div class="calc-panel reveal">
+        <label>Initial investment (KES) <output id="outInitial">100,000</output></label>
+        <input type="range" id="inInitial" min="2000" max="5000000" step="1000" value="100000" oninput="calc()">
+        <label>Monthly top-up (KES) <output id="outMonthly">10,000</output></label>
+        <input type="range" id="inMonthly" min="0" max="500000" step="1000" value="10000" oninput="calc()">
+        <label>Investment period (years) <output id="outYears">5</output></label>
+        <input type="range" id="inYears" min="1" max="30" step="1" value="5" oninput="calc()">
+        <label>Assumed net annual yield (%) <output id="outRate">12.0</output></label>
+        <input type="range" id="inRate" min="1" max="50" step="0.5" value="12" oninput="calc()">
+        <div class="calc-result">
+          <small>Projected value</small>
+          <b id="calcTotal">KES 0</b>
+          <span id="calcDetail"></span>
+        </div>
+        <p class="calc-note">Illustration only, assuming daily compounding, net of fees and before withholding tax. Yields change daily; returns are not guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="background:var(--cyan-mist)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Licences &amp; Regulation</span>
+        <h2>Fully licensed &amp; regulated</h2>
+        <p>Every mandate operates under Kenya's capital markets and pension regulators, the assurance trustees and investors require.</p>
+      </div>
+      <div class="cert-grid">
+        <div class="cert-card reveal"><div class="seal">CMA</div><b>Capital Markets Authority</b><small>Fund Manager &amp; Investment Bank licence No. 187</small></div>
+        <div class="cert-card reveal"><div class="seal">RBA</div><b>Retirement Benefits Authority</b><small>Pension fund manager reg. RBA/A/14/048</small></div>
+        <div class="cert-card reveal"><div class="seal">NSE</div><b>Nairobi Securities Exchange</b><small>Authorised Securities Dealer</small></div>
+        <div class="cert-card gold reveal"><div class="seal">ICIFA</div><b>ICIFA</b><small>Institute of Certified Investment &amp; Financial Analysts</small></div>
+        <div class="cert-card gold reveal"><div class="seal">APTAK</div><b>APTAK</b><small>Assoc. of Pension Trustees &amp; Administrators of Kenya</small></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= ABOUT US (merged) ================= -->
+<section class="page" id="page-about">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">About Us</div>
+    <h1>A boutique investment bank built to <em>outperform.</em></h1>
+    <p>Who we are, what we stand for, and why investors trust us with their capital.</p>
+  </div></div>
+  <section class="section">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Who We Are</span>
+        <h2>Grow and protect your wealth</h2>
+      </div>
+      <div class="svc-grid reveal">
+        <div>
+          <div class="tagline">Since 2016 · Nairobi</div>
+          <h2 style="font-size:30px">Investcent Investment Bank</h2>
+        </div>
+        <div class="svc-body">
+          <p>Investcent is a Nairobi-based boutique investment bank, founded in 2016 as Investcent Partners to meet the needs of those seeking to grow and protect their wealth, and licensed as an investment bank since 2021. We manage retail, institutional and pension capital with one focus: generating alpha through disciplined, hands-on active management.</p>
+          <p>Our team consists of highly skilled, CFA- and ICIFA-qualified professionals and successful investors with deep experience trading financial markets, operating with the latest technology and investing software. We are active across every liquid asset class: equities, fixed income, FX, derivatives and alternatives, as an NSE Authorised Securities Dealer with real-time execution.</p>
+          <p>The growth in the local capital market over the past decade, driven in part by the government's need to finance development, has created a larger, more liquid and tradeable market. As participants have become more advanced, so have the products we use to capture these opportunities for our clients.</p>
+          <div class="values-strip">
+            <span>Integrity</span><span>Professionalism</span><span>Responsiveness</span><span>Passion</span><span>Innovation</span><span>Transparency</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about-why" style="background:var(--cyan-mist)">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Why Investcent</span>
+        <h2>Navigating markets with purpose.</h2>
+        <p>Our active mandate is designed to proactively seek outperformance, identifying and capturing market opportunities through disciplined, research-driven decision-making.</p>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal"><h4>Deep Experience</h4><p>Dedicated, certified professionals with decades across global and African markets.</p></div>
+        <div class="why-item reveal"><h4>Rare Access</h4><p>Market opportunities that are attractive, and not always accessible to the public.</p></div>
+        <div class="why-item reveal"><h4>Risk Obsessed</h4><p>Managing drawdowns is how we help your money compound steadily.</p></div>
+        <div class="why-item reveal"><h4>Aligned Incentives</h4><p>We only succeed when our investors succeed. Hurdles before performance fees.</p></div>
+        <div class="why-item reveal"><h4>Radical Transparency</h4><p>You'll always understand how we work, what we hold and why.</p></div>
+      </div>
+      <div class="edge-band reveal" style="margin-top:44px">
+        <div>
+          <h3>Superior performance through <em>active management.</em></h3>
+          <p>Conviction-led trading, real-time proprietary intelligence and disciplined risk, with prudent oversight under CMA, RBA and NSE regulation, bespoke mandates, full fee and performance transparency, and the agility to respond swiftly to market shifts.</p>
+          <div class="asset-chips"><span>Equities</span><span>Fixed Income</span><span>FX</span><span>Derivatives</span><span>Alternatives</span></div>
+        </div>
+        <div class="edge-points">
+          <div><b>Consistent, benchmark-beating returns</b>Alpha from active management, not market averages.</div>
+          <div><b>Custom-built mandates</b>Engineered to each client's investment objectives.</div>
+          <div><b>Certified team</b>CFA- and ICIFA-qualified investment professionals.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about-leadership">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Leadership &amp; Governance</span>
+        <h2>Experienced people behind the performance</h2>
+        <p>A certified executive team and an independent board holding every mandate to institutional standards of governance.</p>
+      </div>
+      <div class="ceo-band reveal">
+        <div class="avatar-lg">TA</div>
+        <div>
+          <blockquote>"We don't sell the market's average. We are built to outperform it, with conviction, intelligence and disciplined risk."</blockquote>
+          <cite>Tanvir Mohsin Ali <span>· Chief Executive Officer</span></cite>
+        </div>
+      </div>
+      <div class="section-head reveal"><span class="eyebrow">Board of Directors</span><h2>Governance you can hold to account</h2></div>
+      <div class="team-grid">
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">SL</div></div><div class="team-body"><h4>Steven Lugalia, FCPA</h4><div class="role">Chairman</div><p>Fellow Certified Public Accountant chairing the board's oversight of strategy, audit and governance.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">TA</div></div><div class="team-body"><h4>Tanvir Mohsin Ali</h4><div class="role">Chief Executive Officer</div><p>Leads the firm's investment strategy and active trading mandate across all asset classes.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">WK</div></div><div class="team-body"><h4>Wilson Kimutai</h4><div class="role">Non-Executive Director</div><p>Independent oversight of investment strategy and risk on behalf of clients and shareholders.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">JK</div></div><div class="team-body"><h4>John Katiku</h4><div class="role">Non-Executive Director</div><p>Independent director strengthening board governance and compliance oversight.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">KD</div></div><div class="team-body"><h4>Kunmi Demuren</h4><div class="role">Non-Executive Director</div><p>Brings regional capital-markets and investment perspective to board deliberations.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">IM</div></div><div class="team-body"><h4>Irene Mbonge</h4><div class="role">Non-Executive Director</div><p>Independent director championing stakeholder engagement and best-practice governance.</p></div></div>
+        <div class="team-card reveal"><div class="team-photo"><div class="avatar">BK</div></div><div class="team-body"><h4>Bernard Kiragu</h4><div class="role">Company Secretary</div><p>Ensures statutory compliance and the integrity of board processes and records.</p></div></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= CAREERS ================= -->
+<section class="page" id="page-careers">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">About Us · Careers</div>
+    <h1>Build your career where <em>alpha is built.</em></h1>
+    <p>We hire exceptional, curious people who want to do the best work of their lives in Kenya's capital markets.</p>
+  </div></div>
+  <section class="section">
+    <div class="container" style="max-width:760px">
+      <div class="objective-box reveal" style="text-align:center">
+        <h3>No open positions right now</h3>
+        <p>There are currently no advertised vacancies, but great people are always interesting to us. Please keep checking this page for updates, or send your CV and a short note to <b>info@investcent.co</b> and we will keep it on file for future opportunities.</p>
+        <div style="margin-top:22px"><a href="#/contact" class="btn btn-dark">Get in Touch</a></div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="page" id="page-services">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Services</div>
+    <h1>The complete investment-banking <em>toolkit.</em></h1>
+    <p>From private wealth to public funds, the same investment discipline, packaged for every kind of client.</p>
+  </div></div>
+
+  <div class="svc-block" id="svc-pwm">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">For HNWIs &amp; Family Offices</div><h2>Private Wealth Management</h2></div>
+      <div class="svc-body">
+        <p>For our most sophisticated and discerning clients, we work alongside you using the same expertise and technology deployed in our flagship fund. Through a separately managed account you enjoy similar benefits to the fund, tailored to your objectives, constraints and time horizon.</p>
+        <ul>
+          <li>Bespoke financial planning, portfolio construction and succession planning</li>
+          <li>Structured solutions designed around unique client needs and challenging objectives</li>
+          <li>Direct access to senior investment professionals, not a call centre</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-fm">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">Collective Investment Schemes &amp; Flagship Fund</div><h2>Fund Management</h2></div>
+      <div class="svc-body">
+        <p>Investcent is at heart a boutique fund manager. We manage pooled retail and institutional funds with professional, actively managed portfolios, and our flagship IIB Alpha+ Private Hedge Fund, a single master fund run on a discretionary, multi-asset basis (excluding real estate) with an absolute-return approach.</p>
+        <ul>
+          <li>CMA-regulated unit trust funds from KES 2,000: money market, multi-asset and green</li>
+          <li>Absolute-return flagship for sophisticated HNWIs and institutions, by invitation</li>
+          <li>Assets held independently: NCBA Bank as Trustee, I&amp;M Bank as Custodian</li>
+          <li>Shariah-compliant investing is offered through <a href="iib-falah.html" style="color:var(--cyan-deep);font-weight:700">IIB Falāh</a>, our dedicated Shariah window</li>
+        </ul>
+        <a href="#/funds" class="btn btn-dark" style="margin-top:6px">View All Funds</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-pension">
+    <div class="container">
+      <div class="svc-grid reveal" style="margin-bottom:44px">
+        <div><div class="tagline">RBA-Licensed Retirement Solutions</div><h2>Pension Funds</h2></div>
+        <div class="svc-body">
+          <p>We manage pension capital under RBA regulation with one goal: superior, risk-managed returns for schemes and their members. Trustees choose between two mandate structures, both custom-built to the fund's investment objectives with full reporting and oversight.</p>
+        </div>
+      </div>
+      <div class="mandate-grid">
+        <div class="mandate-card reveal">
+          <span class="rba">RBA-LICENSED</span>
+          <h3>Special Mandate</h3>
+          <p>We manage a defined asset class or investment strategy within a pension scheme's portfolio; alpha-seeking active management strategies that complement your existing managers.</p>
+        </div>
+        <div class="mandate-card reveal">
+          <span class="rba">RBA-LICENSED</span>
+          <h3>Full Mandate</h3>
+          <p>End-to-end management of the pension fund's assets under RBA regulation, with full reporting, prudent oversight and mandates custom-built to each fund's investment objectives.</p>
+        </div>
+      </div>
+      <div class="edge-band reveal">
+        <div>
+          <h3>Our difference: we <em>actively trade</em> fixed income.</h3>
+          <p>Most managers buy bonds and hold them to maturity, accepting whatever the market pays. As an NSE Authorised Securities Dealer with real-time execution, we actively trade the yield curve: capturing capital gains from repricing, rotating across tenors, and locking in opportunities the buy-and-hold market leaves on the table. That is how our pension portfolios target returns above the benchmark, not at it.</p>
+          <div class="asset-chips"><span>Equities</span><span>Fixed Income</span><span>FX</span><span>Derivatives</span><span>Alternatives</span></div>
+        </div>
+        <div class="edge-points">
+          <div><b>Active duration &amp; curve positioning</b>Bonds are traded, not parked; every repricing is an opportunity.</div>
+          <div><b>Real-time execution</b>Proprietary and client trading desk with defined risk limits.</div>
+          <div><b>Benchmarks are our floor</b>Superior, risk-managed returns, not the market's average.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-sma">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">Dedicated Portfolios</div><h2>Separately Managed Accounts</h2></div>
+      <div class="svc-body">
+        <p>An SMA is a dedicated portfolio managed exclusively for you, with direct ownership of every security rather than units in a pooled fund. You see exactly what you hold, why you hold it, and what it costs, while our team applies the same active investment discipline used across the firm.</p>
+        <ul>
+          <li>Direct ownership and full, line-by-line transparency</li>
+          <li>Mandates tailored to your objectives, income needs, risk limits and exclusions</li>
+          <li>Suited to institutions, pension schemes, endowments and substantial private clients</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-endowment">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">Perpetual Capital, Managed for Purpose</div><h2>Endowment Fund Management</h2></div>
+      <div class="svc-body">
+        <p>Endowments exist to fund a mission, in perpetuity. We manage endowment capital for foundations, universities, schools, religious institutions and charitable trusts, balancing long-term capital growth against the sustainable spending your mission requires.</p>
+        <ul>
+          <li>Investment policy design: spending rules, liquidity tiers and risk budgets</li>
+          <li>Diversified multi-asset portfolios engineered for intergenerational growth</li>
+          <li>Transparent reporting for boards, trustees and donors</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-public">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">Government &amp; Public Sector</div><h2>Public Funds Management</h2></div>
+      <div class="svc-body">
+        <p>We manage and advise on public-sector capital for county and national government entities, statutory bodies and state corporations, where governance, liquidity and accountability requirements are paramount.</p>
+        <ul>
+          <li>Treasury and liquidity management for public entities and statutory funds</li>
+          <li>Infrastructure funding, debt management and economic-development mandates</li>
+          <li>Procurement-grade reporting, compliance and audit-ready transparency</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-advisory">
+    <div class="container">
+      <div class="svc-grid reveal" style="margin-bottom:40px">
+        <div><div class="tagline">Investment Banking</div><h2>Advisory</h2></div>
+        <div class="svc-body"><p>Full-service corporate and advisory capability, leveraging unique insight across the financial landscape and an extensive network of contacts to meet the most challenging objectives.</p></div>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-card reveal"><h4>Capital Raising</h4><p>Equity &amp; debt capital markets: IPOs, rights issues, private placements and structured finance.</p></div>
+        <div class="adv-card reveal"><h4>M&amp;A Advisory</h4><p>Mergers, acquisitions &amp; divestitures with valuation, due diligence and deal origination.</p></div>
+        <div class="adv-card reveal"><h4>Corporate Finance</h4><p>Restructuring, refinancing, balance-sheet &amp; working-capital finance and treasury advisory.</p></div>
+        <div class="adv-card reveal"><h4>Government &amp; Public Sector</h4><p>Infrastructure funding, debt management and economic-development mandates.</p></div>
+        <div class="adv-card reveal"><h4>Private Wealth Advisory</h4><p>Bespoke planning, portfolio construction &amp; succession for HNWIs and family offices.</p></div>
+        <div class="adv-card reveal"><h4>Training &amp; Capacity Building</h4><p>Executive education, board training and certified capital-markets programmes.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-brokerage" style="border-bottom:none">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">NSE Authorised Securities Dealer</div><h2>Brokerage</h2></div>
+      <div class="svc-body">
+        <p>As a licensed securities dealer on the Nairobi Securities Exchange, we execute for our own book and for clients, with real-time execution, defined risk limits and the market intelligence of an active trading desk behind every order.</p>
+        <ul>
+          <li>Equities and fixed income dealing on the NSE, plus FX and derivatives capability</li>
+          <li>Proprietary &amp; client trading with real-time execution</li>
+          <li>Trade ideas and market colour from the desk that trades its own capital</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FUNDS OVERVIEW ================= -->
+<section class="page" id="page-funds">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Funds</div>
+    <h1>Our funds, in <em>KES and USD.</em></h1>
+    <p>Every fund is CMA-regulated, independently held in trust and actively managed by Investcent.</p>
+  </div></div>
+  <section class="section">
+    <div class="container">
+      <div class="fund-grid" id="fundsPageGrid"></div>
+      <p class="disclaimer reveal"><b>Important:</b> Capital is at risk and returns are not guaranteed. Past performance is not an indicator of future performance. Special funds carry a 180-day lock-in; see each fund's risk profile. Read each fund's Information Memorandum before investing.</p>
+    </div>
+  </section>
+  <section class="section" style="background:var(--cyan-mist);padding-top:64px">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Payment Details</span>
+        <h2>Ready to invest? Pay in here</h2>
+        <p>Make transfers directly to the collection account matching your investment currency, quoting your investment account number as the reference.</p>
+      </div>
+      <div class="pay-embed"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= RESOURCES ================= -->
+<section class="page" id="page-resources">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Resources</div>
+    <h1>Tools and insight for <em>informed investors.</em></h1>
+    <p>Project your returns, watch our explainers, read the desk's thinking and download our research.</p>
+  </div></div>
+
+  <section class="section calc" id="res-calculator" style="padding:38px 0">
+    <div class="container calc-grid">
+      <div class="section-head reveal" style="margin-bottom:0">
+        <span class="eyebrow">Calculator</span>
+        <h2>Project your investment growth</h2>
+        <p>Model how regular contributions could grow with daily compounding, from conservative money market yields to special-fund scenarios of up to 50% net.</p>
+        <div style="margin-top:22px;display:flex;gap:14px;flex-wrap:wrap">
+          <a href="https://portal.investcent.co/en" target="_blank" rel="noopener" class="btn btn-primary">Invest Now</a>
+          <a href="#/contact" class="btn btn-ghost">Get in Touch →</a>
+        </div>
+      </div>
+      <div class="calc-panel reveal">
+        <label>Initial investment (KES) <output id="outInitial2">100,000</output></label>
+        <input type="range" id="inInitial2" min="2000" max="5000000" step="1000" value="100000" oninput="calc2()">
+        <label>Monthly top-up (KES) <output id="outMonthly2">10,000</output></label>
+        <input type="range" id="inMonthly2" min="0" max="500000" step="1000" value="10000" oninput="calc2()">
+        <label>Investment period (years) <output id="outYears2">5</output></label>
+        <input type="range" id="inYears2" min="1" max="30" step="1" value="5" oninput="calc2()">
+        <label>Assumed net annual yield (%) <output id="outRate2">12.0</output></label>
+        <input type="range" id="inRate2" min="1" max="50" step="0.5" value="12" oninput="calc2()">
+        <div class="calc-result">
+          <small>Projected value</small>
+          <b id="calcTotal2">KES 0</b>
+          <span id="calcDetail2"></span>
+        </div>
+        <p class="calc-note">Illustration only, assuming daily compounding, net of fees and before withholding tax. Yields change daily; returns are not guaranteed.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="res-media">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Media</span><h2>Watch, listen and follow along</h2></div>
+      <div class="media-grid">
+        <div class="media-card mc-1 reveal"><span>Meet Investcent: Charting Success Together (3 min)</span></div>
+        <div class="media-card mc-2 reveal"><span>Inside the Green Fund: investing in Kenya's climate transition</span></div>
+        <div class="media-card mc-3 reveal"><span>Trustee briefing: active fixed income trading in pension mandates</span></div>
+        <div class="media-card mc-4 reveal"><span>CEO Tanvir Mohsin Ali: built to outperform, not to match the market</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="res-articles" style="background:var(--cyan-mist)">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Articles</span><h2>Read what our desk is thinking</h2></div>
+      <div class="insights-grid">
+        <article class="article reveal">
+          <div class="article-img ai-1"></div>
+          <div class="article-body">
+            <div class="meta">Market Commentary · July 2026</div>
+            <h3>Where next for KES rates? Positioning after the T-Bill repricing</h3>
+            <p>Government financing needs have deepened the local market and created liquid, tradeable opportunities. Our take on duration, and what it means for money market yields.</p>
+            <span class="read">Read article →</span>
+          </div>
+        </article>
+        <article class="article reveal">
+          <div class="article-img ai-2"></div>
+          <div class="article-body">
+            <div class="meta">Fund Update · Green Fund</div>
+            <h3>Financing the transition: why green bonds belong in Kenyan portfolios</h3>
+            <p>Renewable energy, sustainable agriculture and climate-aligned infrastructure are becoming investable at scale. How the Investcent Green Fund captures the theme.</p>
+            <span class="read">Read article →</span>
+          </div>
+        </article>
+        <article class="article reveal">
+          <div class="article-img ai-3"></div>
+          <div class="article-body">
+            <div class="meta">Investor Education</div>
+            <h3>Daily yield vs effective annual yield: what your statement really says</h3>
+            <p>Compounding quietly does the heavy lifting in a money market fund. A plain-language guide to reading yields, fees and withholding tax on your returns.</p>
+            <span class="read">Read article →</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="res-research">
+    <div class="container">
+      <div class="section-head reveal"><span class="eyebrow">Research</span><h2>From the research desk</h2><p>Fact sheets and research notes are published monthly and emailed to all clients. Request any edition below.</p></div>
+      <div class="research-list">
+        <a class="research-item reveal" href="#/contact"><span><b>Monthly Fund Fact Sheets</b><small>Performance, positioning and commentary for every Investcent fund</small></span><span class="dl">Request →</span></a>
+        <a class="research-item reveal" href="#/contact"><span><b>Fixed Income Monitor</b><small>Weekly yield-curve moves, auction results and our positioning view</small></span><span class="dl">Request →</span></a>
+        <a class="research-item reveal" href="#/contact"><span><b>Macro &amp; Markets Outlook</b><small>Quarterly view on rates, FX, equities and the Kenyan economy</small></span><span class="dl">Request →</span></a>
+        <a class="research-item reveal" href="#/contact"><span><b>Pension Trustee Briefings</b><small>Mandate performance frameworks and regulatory updates for trustees</small></span><span class="dl">Request →</span></a>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= FAQS ================= -->
+<section class="page" id="page-faqs">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">FAQs</div>
+    <h1>Questions investors <em>ask us.</em></h1>
+    <p>Everything you need to know about opening an account, investing, fees and withdrawals.</p>
+  </div></div>
+  <section class="section">
+    <div class="container" style="max-width:840px">
+      <details open><summary>How do I open an account?</summary><div class="faq-body">You complete an application (online or physical), provide identification and KYC documents (ID/passport, KRA PIN and a photo), select your fund(s) and currency, and transfer funds to the designated client account. You can start the Money Market Fund with just KES 2,000 (or USD 20).</div></details>
+      <details><summary>Can I invest via mobile money or online banking?</summary><div class="faq-body">Yes, through our official payment channels: bank transfer to our SBM Bank collection accounts (shown at the bottom of this page) or via M-Pesa Paybill. Always quote your investment account number as the reference.</div></details>
+      <details><summary>How do I top up my investment?</summary><div class="faq-body">Add to your existing account using the same payment channels, referencing your investment account number (format HKXXXX for KES, HUXXXX for USD). Share the payment confirmation with us for timely allocation.</div></details>
+      <details><summary>How do I track performance and statements?</summary><div class="faq-body">You receive monthly statements and can view up-to-date prices and yields on our website and digital platforms, or through your member portal. Further detail is published in our fact sheets and newsletters on an ongoing basis. A mobile app is in development.</div></details>
+      <details><summary>Can I switch from one fund to another?</summary><div class="faq-body">Yes, simply fill in the switch form provided on our website.</div></details>
+      <details><summary>How can I obtain more information on fund performance?</summary><div class="faq-body">More information is available on our website and in our fact sheets and newsletters, which are published on an ongoing basis. See the <a href="#/resources/res-research" style="color:var(--cyan-deep);font-weight:700">Research</a> section.</div></details>
+      <details><summary>Can I open an account for a minor or joint investors?</summary><div class="faq-body">Yes. Accounts for minors (operated by a parent/guardian) and joint accounts are available, subject to completion of the relevant application forms and KYC.</div></details>
+      <details><summary>What is the difference between the KES and USD funds?</summary><div class="faq-body">KES funds are denominated in Kenya shillings and target local-currency assets. USD funds are denominated in US dollars and primarily invest in dollar assets or USD-linked instruments, providing currency diversification.</div></details>
+      <details><summary>Are these funds suitable for both individuals and institutions?</summary><div class="faq-body">Yes. Both retail and institutional investors can invest, subject to minimum investment amounts and KYC requirements.</div></details>
+      <details><summary>What sets Investcent apart?</summary><div class="faq-body">Active trading. Most managers buy and hold; as an NSE Authorised Securities Dealer we actively trade every liquid asset class, especially fixed income, to capture returns above the benchmark, with disciplined risk limits.</div></details>
+      <details><summary>Who regulates these funds?</summary><div class="faq-body">All our funds (KES and USD) are regulated by the Capital Markets Authority (CMA) under the Capital Markets Act and the Collective Investment Schemes Regulations. Pension mandates are regulated by the Retirement Benefits Authority (RBA).</div></details>
+      <details><summary>How do you manage risk in the various funds?</summary><div class="faq-body">Through diversification across asset classes and issuers, active asset allocation, ongoing monitoring, and strict adherence to regulatory and internal risk limits. Note that returns are not guaranteed and past performance is not an indication of future performance.</div></details>
+      <details><summary>Can I schedule a consultation to discuss my financial needs?</summary><div class="faq-body">Yes, reach us on +254 709 327 800 or info@investcent.co, or use the contact form on the Get in Touch page, and a member of the team will set up a consultation.</div></details>
+    </div>
+  </section>
+  <section class="section" style="background:var(--cyan-mist);padding-top:64px">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">Payment Options</span>
+        <h2>How to pay in your investment</h2>
+        <p>Transfer to the collection account matching your investment currency, quoting your investment account number as the reference.</p>
+      </div>
+      <div class="pay-embed"></div>
+    </div>
+  </section>
+</section>
+
+<!-- ================= GET IN TOUCH ================= -->
+<section class="page" id="page-contact">
+  <div class="page-hero"><div class="container inner">
+    <div class="crumb">Get in Touch</div>
+    <h1>Let's chart <em>your success.</em></h1>
+    <p>Tell us about your goals and a member of the team, and we will come back to you within one working day.</p>
+  </div></div>
+  <section class="section">
+    <div class="container contact-grid">
+      <div class="contact-info reveal">
+        <h3>Visit or reach us</h3>
+        <div class="c-row"><div class="ic">📍</div><div><b>Head Office</b><span>6th Floor, The Address, Muthangari Drive Road<br>P.O. Box 19445-00202, Nairobi, Kenya</span></div></div>
+        <div class="c-row"><div class="ic">📞</div><div><b>Call or WhatsApp</b><span>+254 709 327 800 &nbsp;·&nbsp; +254 711 539 476</span></div></div>
+        <div class="c-row"><div class="ic">✉️</div><div><b>Email</b><span>info@investcent.co &nbsp;·&nbsp; growwithus@investcent.co</span></div></div>
+        <div class="c-row"><div class="ic">🕒</div><div><b>Office Hours</b><span>Monday to Friday, 9:00 am – 5:00 pm</span></div></div>
+      </div>
+      <form class="reveal" id="contactForm">
+        <div class="row">
+          <input type="text" placeholder="Full name" required id="cfName">
+          <input type="email" placeholder="Email address" required id="cfEmail">
+        </div>
+        <div class="row">
+          <input type="tel" placeholder="Phone number" id="cfPhone">
+          <select required id="cfInterest">
+            <option value="" disabled selected>I'm interested in…</option>
+            <option>Money Market Fund (KES / USD)</option>
+            <option>Multi-Asset Special Fund</option>
+            <option>Green Fund</option>
+            <option>IIB Alpha+ Private Hedge Fund (qualified investors)</option>
+            <option>Pension Mandate: Special or Full (trustees)</option>
+            <option>Separately Managed Account</option>
+            <option>Endowment / Public Funds Management</option>
+            <option>Stockbroking / Securities Dealing</option>
+            <option>Investment Banking &amp; Advisory</option>
+          </select>
+        </div>
+        <textarea rows="4" placeholder="Tell us about your goals" id="cfMsg"></textarea>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+      </form>
+    </div>
+  </section>
+  <section style="background:var(--cyan-mist);padding:48px 0" id="payments">
+    <div class="container">
+      <div class="section-head reveal" style="margin-bottom:24px">
+        <span class="eyebrow">Find Us</span>
+        <h2 style="font-size:clamp(24px,3vw,32px)">Visit us at The Address, Muthangari Drive</h2>
+      </div>
+      <div class="map-card reveal" style="min-height:220px">
+        <iframe title="Investcent offices map" style="min-height:220px;height:220px" src="https://www.google.com/maps?q=The+Address,+Muthangari+Drive,+Westlands,+Nairobi&output=embed" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+</section>
+
+</main>
+
+<!-- Footer -->
+<footer>
+  <div class="container foot-grid">
+    <div class="foot-brand">
+      <a href="#/home" class="logo">
+        <div class="logo-mark" style="color:#fff"><svg viewBox="0 0 62 46" width="50" height="37" aria-hidden="true"><circle cx="18" cy="28" r="12.5" fill="none" stroke="currentColor" stroke-width="4.6"/><circle cx="37" cy="23" r="16.5" fill="none" stroke="currentColor" stroke-width="4.6"/><path d="M28 33 L45 16 M36.5 16 H45 V24.5" fill="none" stroke="var(--cyan)" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="logo-text" style="color:#fff"><b style="color:#fff">INVESTCENT</b><small style="color:var(--cyan)">INVESTMENT BANK</small></div>
+      </a>
+      <p>A boutique investment bank and active fund manager, founded in 2016 and licensed as an investment bank since 2021, committed to integrity, professionalism, responsiveness, passion, innovation and transparency.</p>
+      <div class="socials">
+        <a href="#" aria-label="LinkedIn" title="LinkedIn">in</a>
+        <a href="#" aria-label="X (Twitter)" title="X">𝕏</a>
+        <a href="#" aria-label="Facebook" title="Facebook">f</a>
+        <a href="#" aria-label="Instagram" title="Instagram">◎</a>
+        <a href="#" aria-label="YouTube" title="YouTube">▶</a>
+        <a href="https://wa.me/254709327800" aria-label="WhatsApp" title="WhatsApp">✆</a>
+      </div>
+    </div>
+    <div>
+      <h5>Funds</h5>
+      <a href="#/fund-mmf">Money Market Fund</a>
+      <a href="#/fund-masf">Multi-Asset Special Fund</a>
+      <a href="#/fund-green">Green Fund</a>
+      <a href="#/fund-hedge">IIB Alpha+ Private Hedge Fund</a>
+      <a href="iib-falah.html">IIB Falāh (Shariah) ↗</a>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <a href="#/about">About Us</a>
+      <a href="#/about/about-why">Why Investcent</a>
+      <a href="#/about/about-leadership">Board of Directors</a>
+      <a href="#/resources/res-articles">Insights</a>
+      <a href="#/resources/res-media">Media Centre</a>
+      <a href="#/careers">Careers</a>
+    </div>
+    <div>
+      <h5>Investors</h5>
+      <a href="#/resources/res-calculator">Returns Calculator</a>
+      <a href="#/resources/res-research">Research</a>
+      <a href="#/faqs">FAQs</a>
+      <a href="#/contact">Fact Sheets</a>
+      <a href="https://portal.investcent.co/en" target="_blank" rel="noopener">Client Portal</a>
+    </div>
+  </div>
+  <div class="reg-strip">
+    <div class="container">Investcent Investment Bank Limited is licensed in the Republic of Kenya: Capital Markets Authority Fund Manager &amp; Investment Bank licence (No. 187); Retirement Benefits Authority pension fund manager registration (No. RBA/A/14/048); Nairobi Securities Exchange Authorised Securities Dealer; member of ICIFA and APTAK. Fund Trustee: NCBA Bank Kenya PLC · Custodian: I&amp;M Bank Kenya. Investments carry risk; the value of investments may go down as well as up and past performance is not a reliable indicator of future results. Market data shown is indicative and may be delayed; it does not constitute investment advice.</div>
+  </div>
+  <div class="container foot-legal">
+    <span>© 2026 Investcent Investment Bank. All rights reserved.</span>
+    <span>Privacy Policy · Terms of Use · Complaints</span>
+  </div>
+</footer>
+
+<script>
+/* ================= Fund data (from official fact sheets; Green Fund customised as a special fund) ================= */
+const COMMON=[['Trustee','NCBA Bank Kenya PLC'],['Custodian','I&M Bank Kenya'],['Fund manager','Investcent'],['Regulator','Capital Markets Authority']];
+const FUND_GROUPS=[
+  {
+    id:'mmf', icon:'💧', iconCls:'blue', risk:'LOW RISK', riskCls:'low',
+    name:'Money Market Fund', sub:'KES &amp; USD · Money Market Fund',
+    blurb:'Capital preservation, daily liquidity and competitive income from high-quality short-term money market and fixed income instruments.',
+    stats:[['Min. investment','KES 2,000 / USD 20'],['Lock-in','5 working days'],['Mgmt fee','2.0% p.a.'],['Compounding','Daily']],
+    objective:'The fund seeks to provide capital preservation, daily liquidity, and competitive income by investing primarily in approved high-quality short-term money market and fixed income instruments: KES-denominated in the KES class, USD-denominated in the USD class.',
+    kes:[['Fund type','Money Market Fund'],['Base currency','KES'],['Target investors','Retail'],['Investment horizon','Short – Medium term'],['Risk profile','Low'],['Lock-in period','5 working days'],['Management fee','2.0% p.a.'],['Initial fees','NIL'],['Min. investment','KES 2,000'],['Min. top-up','KES 1,000'],['Compounding','Daily'],['Redemption charges','0%'],['Benchmark','182-day T-Bill + 2%'],...COMMON],
+    usd:[['Fund type','Money Market Fund'],['Base currency','USD'],['Target investors','Retail'],['Investment horizon','Short – Medium term'],['Risk profile','Low'],['Lock-in period','5 working days'],['Management fee','2.0% p.a.'],['Initial fees','NIL'],['Min. investment','USD 20'],['Min. top-up','USD 10'],['Compounding','Daily'],['Redemption charges','0%'],['Benchmark','Avg. 3-month USD deposit rate, tier-1 banks'],...COMMON]
+  },
+  {
+    id:'masf', icon:'📈', iconCls:'blue', risk:'HIGH RISK', riskCls:'high',
+    name:'Multi-Asset Special Fund', sub:'KES &amp; USD · Special Fund',
+    blurb:'Medium to long-term capital growth and income through diversified exposure to approved local, regional and global multi-asset investments.',
+    stats:[['Min. investment','KES 100,000 / USD 1,000'],['Lock-in','180 days'],['Perf. fee','10% above hurdle'],['Compounding','Monthly']],
+    objective:'The fund seeks medium to long-term capital growth and income through diversified exposure to approved multi-asset investments: KES-denominated in the KES class; USD-denominated global or regional instruments in the USD class.',
+    kes:[['Fund type','Special Fund'],['Base currency','KES'],['Target investors','Retail / HNWI / Institutional / Qualified investors'],['Investment horizon','Medium – Long term'],['Risk profile','Medium'],['Lock-in period','180 days'],['Management fee','5.0% p.a. pro-rated'],['Performance fee','10% above 25% hurdle rate'],['Initial fee','NIL'],['Min. investment','KES 100,000'],['Min. top-up','KES 50,000'],['Compounding','Monthly'],...COMMON],
+    usd:[['Fund type','Special Fund'],['Base currency','USD'],['Target investors','Retail / HNWI / Institutional / Qualified investors'],['Investment horizon','Medium – Long term'],['Risk profile','Medium'],['Lock-in period','180 days'],['Management fee','5.0% p.a. pro-rated'],['Performance fee','10% above 15% hurdle rate'],['Initial fee','NIL'],['Min. investment','USD 1,000'],['Min. top-up','USD 500'],['Compounding','Monthly'],...COMMON]
+  },
+  {
+    id:'hedge', icon:'♛', iconCls:'goldbg', risk:'BY INVITATION', riskCls:'exclusive',
+    name:'IIB Alpha+ Private Hedge Fund', sub:'KES &amp; USD · Flagship · Absolute Return',
+    blurb:'Our invitation-only flagship. Absolute-return, multi-asset (excluding real estate) and fully discretionary: the hedge-fund engine behind our mandates.',
+    stats:[['Strategy','Absolute return'],['Universe','Multi-asset'],['Eligibility','Qualified investors'],['Terms','On request']],
+    objective:'The IIB Alpha+ Private Hedge Fund pursues positive returns in all market conditions on a fully discretionary, multi-asset basis (excluding real estate). Access is by invitation to sophisticated High-Net-Worth Individuals and Institutions, in KES and USD classes.',
+    kes:[['Fund type','Private Hedge Fund (Master Fund)'],['Class currency','KES'],['Strategy','Absolute return, discretionary'],['Investment universe','Multi-asset, excluding real estate'],['Target investors','HNWI / Institutional / Qualified investors'],['Investment horizon','Long term'],['Risk profile','High'],['Account reference format','HKXXXX'],['Collection account','SBM Bank Ltd · 0082420443001'],['Fees & terms','Available on request'],['Fund manager','Investcent'],['Regulator','Capital Markets Authority']],
+    usd:[['Fund type','Private Hedge Fund (Master Fund)'],['Class currency','USD'],['Strategy','Absolute return, discretionary'],['Investment universe','Multi-asset, excluding real estate'],['Target investors','HNWI / Institutional / Qualified investors'],['Investment horizon','Long term'],['Risk profile','High'],['Account reference format','HUXXXX'],['Collection account','SBM Bank Ltd · 0082420443002'],['Fees & terms','Available on request'],['Fund manager','Investcent'],['Regulator','Capital Markets Authority']]
+  },
+  {
+    id:'green', icon:'🌱', iconCls:'greenbg', risk:'HIGH RISK', riskCls:'high',
+    name:'Green Fund', sub:'KES &amp; USD · Special Fund (Sustainable)',
+    blurb:'Capital growth with purpose: diversified exposure to green bonds, renewable energy, sustainable agriculture and ESG-screened assets.',
+    stats:[['Min. investment','KES 100,000 / USD 1,000'],['Lock-in','180 days'],['Perf. fee','10% above hurdle'],['Compounding','Monthly']],
+    objective:'The fund seeks medium to long-term capital growth and income through diversified exposure to climate-aligned investments, including green bonds, renewable energy, sustainable agriculture and ESG-screened instruments. Structured and treated as a special fund, in KES and USD classes.',
+    kes:[['Fund type','Special Fund (Sustainable / Green)'],['Base currency','KES'],['Target investors','Retail / HNWI / Institutional / Qualified investors'],['Investment horizon','Medium – Long term'],['Risk profile','High'],['Lock-in period','180 days'],['Management fee','5.0% p.a. pro-rated'],['Performance fee','10% above 25% hurdle rate'],['Initial fee','NIL'],['Min. investment','KES 100,000'],['Min. top-up','KES 50,000'],['Compounding','Monthly'],...COMMON],
+    usd:[['Fund type','Special Fund (Sustainable / Green)'],['Base currency','USD'],['Target investors','Retail / HNWI / Institutional / Qualified investors'],['Investment horizon','Medium – Long term'],['Risk profile','High'],['Lock-in period','180 days'],['Management fee','5.0% p.a. pro-rated'],['Performance fee','10% above 15% hurdle rate'],['Initial fee','NIL'],['Min. investment','USD 1,000'],['Min. top-up','USD 500'],['Compounding','Monthly'],...COMMON]
+  }
+];
+
+/* ================= Generate fund detail pages ================= */
+function fundTable(rows){return '<table>'+rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td></tr>`).join('')+'</table>';}
+function buildFundPages(){
+  const main=document.getElementById('pages');
+  FUND_GROUPS.forEach(f=>{
+    const sec=document.createElement('section');
+    sec.className='page';
+    sec.id='page-fund-'+f.id;
+    sec.innerHTML=`
+    <div class="page-hero"><div class="container inner">
+      <div class="crumb"><a href="#/funds" style="color:#7FC5F5">Funds</a> · ${f.sub}</div>
+      <h1>Investcent <em>${f.name}</em></h1>
+      <p>${f.blurb}</p>
+      <div class="fund-meta">${f.stats.map(s=>`<span>${s[0]}: ${s[1]}</span>`).join('')}</div>
+    </div></div>
+    <section class="section">
+      <div class="container">
+        <div class="objective-box reveal"><h3>Fund objective</h3><p>${f.objective}</p></div>
+        <div class="fund-detail-grid">
+          <div class="fund-table-card reveal"><div class="fh"><small>Kenyan Shilling class</small><h3>${f.name} (KES)</h3></div>${fundTable(f.kes)}</div>
+          <div class="fund-table-card reveal"><div class="fh"><small>US Dollar class</small><h3>${f.name} (USD)</h3></div>${fundTable(f.usd)}</div>
+        </div>
+        <p class="disclaimer reveal"><b>Important:</b> Capital is at risk and returns are not guaranteed. Past performance is not an indicator of future performance. Read the fund's Information Memorandum before investing. Regulated by the Capital Markets Authority.</p>
+        <div class="cta-band reveal" style="margin-top:40px">
+          <div><h3>Invest in the ${f.name}</h3><p>Open an account in minutes, or ask us anything first.</p></div>
+          <div style="display:flex;gap:14px;flex-wrap:wrap;position:relative">
+            <a href="#/contact" class="btn btn-primary">Invest Now</a>
+            <a href="#/faqs" class="btn btn-ghost">Read the FAQs</a>
+          </div>
+        </div>
+      </div>
+    </section>`;
+    main.appendChild(sec);
+  });
+}
+
+/* ================= Fund summary cards (home + funds page) ================= */
+function fundCard(f){
+  return `<a class="fund-card reveal" href="#/fund-${f.id}">
+    <h3>${f.name}</h3>
+    <div class="sub">${f.sub}</div>
+    <p>${f.blurb}</p>
+    <div class="fund-stats">${f.stats.map(s=>`<div><small>${s[0]}</small><b>${s[1]}</b></div>`).join('')}</div>
+    <span class="link">View full fund details →</span>
+  </a>`;
+}
+function renderFundGrids(){
+  const html=FUND_GROUPS.map(fundCard).join('');
+  const g1=document.getElementById('homeFundGrid'); if(g1) g1.innerHTML=html;
+  const g2=document.getElementById('fundsPageGrid'); if(g2) g2.innerHTML=html;
+}
+
+/* ================= Payment details blocks ================= */
+const BANKS=[
+  {cur:'KES', label:'Kenyan Shilling investments', acct:'0082420443001', ref:'HKXXXX'},
+  {cur:'USD', label:'US Dollar investments', acct:'0082420443002', ref:'HUXXXX'}
+];
+function bankCard(b){
+  return `<div class="bank-card">
+    <div class="bank-head"><small>${b.label}</small><h3>${b.cur} Collection Account</h3></div>
+    <table>
+      <tr><td>Bank name</td><td>SBM Bank Ltd</td></tr>
+      <tr><td>Branch</td><td>Riverside Branch</td></tr>
+      <tr><td>Account name</td><td>Investcent Investment Bank Collection Account</td></tr>
+      <tr><td>Account number</td><td>${b.acct}</td></tr>
+      <tr><td>SWIFT code</td><td>SBMKKENA</td></tr>
+      <tr><td>Bank / branch code</td><td>060 / 008</td></tr>
+      <tr class="ref"><td>Reference</td><td>Your investment account number (format: ${b.ref})</td></tr>
+    </table>
+  </div>`;
+}
+function renderPayments(){
+  document.querySelectorAll('.pay-embed').forEach(el=>{
+    const compact=el.dataset.compact==='true';
+    if(compact) el.classList.add('compact');
+    el.innerHTML=`<div class="bank-grid">${BANKS.map(bankCard).join('')}</div>`+
+      (compact?'':`<div class="bank-note"><b>Important:</b> When making bank transfers, kindly ensure you quote your investment account number as the reference, and share the payment confirmation with us for timely allocation of your funds. M-Pesa Paybill deposits are also supported; paybill details are provided with your welcome pack or on request.</div>`);
+  });
+}
+
+/* ================= Router ================= */
+function currentRoute(){
+  const h=(location.hash||'#/home').replace(/^#\/?/,'');
+  const parts=h.split('/');
+  return {page:parts[0]||'home', sub:parts[1]||null};
+}
+function navigate(){
+  const {page,sub}=currentRoute();
+  const target=document.getElementById('page-'+page)||document.getElementById('page-home');
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  target.classList.add('active');
+  document.getElementById('navLinks').classList.remove('open');
+  observeReveals();
+  if(sub){
+    setTimeout(()=>{
+      const el=document.getElementById(sub);
+      if(el) el.scrollIntoView({behavior:'smooth',block:'start'});
+    },120);
+  } else {
+    window.scrollTo({top:0,behavior:'auto'});
+  }
+}
+window.addEventListener('hashchange',navigate);
+
+/* ================= NSE live stocks ticker ================= */
+const STOCK_FEED_URL = null; // set to your market-data endpoint (JSON: [{ticker,name,price,change}]) for live prices
+const NSE_SNAPSHOT = [
+  {ticker:'SCOM', name:'Safaricom',        price:28.15, change:+0.90},
+  {ticker:'EQTY', name:'Equity Group',     price:52.25, change:+0.48},
+  {ticker:'KCB',  name:'KCB Group',        price:49.90, change:-0.30},
+  {ticker:'EABL', name:'EABL',             price:196.00,change:+1.25},
+  {ticker:'ABSA', name:'Absa Kenya',       price:19.55, change:+0.26},
+  {ticker:'COOP', name:'Co-op Bank',       price:17.80, change:0.00},
+  {ticker:'NCBA', name:'NCBA Group',       price:64.50, change:-0.75},
+  {ticker:'SCBK', name:'StanChart Kenya',  price:308.75,change:+2.00},
+  {ticker:'KENGEN', name:'KenGen',         price:7.42,  change:+0.12},
+  {ticker:'KPLC', name:'Kenya Power',      price:11.05, change:-0.15},
+  {ticker:'BAT',  name:'BAT Kenya',        price:382.00,change:+1.50},
+  {ticker:'SBIC', name:'Stanbic Holdings', price:139.25,change:+0.50}
+];
+function renderTicker(rows, live){
+  const items = rows.map(s=>{
+    const dir = s.change>0?'tk-up':(s.change<0?'tk-down':'tk-flat');
+    const arrow = s.change>0?'▲':(s.change<0?'▼':'▪');
+    const chg = (s.change>0?'+':'')+Number(s.change).toFixed(2);
+    return `<span><b>${s.ticker}</b> ${s.name} ${Number(s.price).toFixed(2)} <span class="${dir}">${arrow} ${chg}</span></span>`;
+  }).join('');
+  const label = live
+    ? `<span><em>Live NSE prices</em> · Investcent · NSE Authorised Securities Dealer</span>`
+    : `<span><em>Indicative NSE prices (delayed)</em> · Trade with Investcent · NSE Authorised Securities Dealer</span>`;
+  document.getElementById('tickerTrack').innerHTML=(items+label)+(items+label);
+}
+async function loadTicker(){
+  if(STOCK_FEED_URL){
+    try{
+      const r=await fetch(STOCK_FEED_URL);
+      const data=await r.json();
+      if(Array.isArray(data)&&data.length){renderTicker(data,true);return;}
+    }catch(e){}
+  }
+  renderTicker(NSE_SNAPSHOT,false);
+}
+
+/* ================= Calculators ================= */
+function fmt(n){return 'KES '+Math.round(n).toLocaleString('en-KE')}
+function runCalc(sfx){
+  const g=id=>document.getElementById(id+sfx);
+  if(!g('inInitial'))return;
+  const P=+g('inInitial').value, M=+g('inMonthly').value, Y=+g('inYears').value, r=+g('inRate').value/100;
+  g('outInitial').textContent=P.toLocaleString();
+  g('outMonthly').textContent=M.toLocaleString();
+  g('outYears').textContent=Y;
+  g('outRate').textContent=(r*100).toFixed(1);
+  const daily=r/365;
+  let total=P*Math.pow(1+daily,365*Y);
+  for(let m=1;m<=Y*12;m++){ total+=M*Math.pow(1+daily,365*Y-m*30.42); }
+  const contributed=P+M*12*Y;
+  g('calcTotal').textContent=fmt(total);
+  g('calcDetail').textContent=`You contribute ${fmt(contributed)}, with projected growth of ${fmt(total-contributed)}`;
+}
+function calc(){runCalc('')}
+function calc2(){runCalc('2')}
+
+/* ================= Contact form: send via email ================= */
+const cf=document.getElementById('contactForm');
+if(cf){
+  cf.addEventListener('submit',e=>{
+    e.preventDefault();
+    const v=id=>{const el=document.getElementById(id);return el?el.value:''};
+    const subject=encodeURIComponent('Website enquiry: '+(v('cfInterest')||'General'));
+    const body=encodeURIComponent(
+      'Name: '+v('cfName')+'\n'+
+      'Email: '+v('cfEmail')+'\n'+
+      'Phone: '+v('cfPhone')+'\n'+
+      'Interested in: '+v('cfInterest')+'\n\n'+
+      v('cfMsg'));
+    window.location.href='mailto:info@investcent.co?subject='+subject+'&body='+body;
+    cf.innerHTML='<p style="font-size:17px;font-weight:600">Thank you. Your email app has opened with your message addressed to info@investcent.co; press send there and we will come back to you within one working day.</p>';
+  });
+}
+
+/* ================= Mobile nav & reveal ================= */
+document.getElementById('hamburger').addEventListener('click',()=>{
+  document.getElementById('navLinks').classList.toggle('open');
+});
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:.1});
+function observeReveals(){
+  document.querySelectorAll('.page.active .reveal:not(.visible)').forEach(el=>io.observe(el));
+}
+
+/* ================= Init ================= */
+buildFundPages();
+renderFundGrids();
+renderPayments();
+loadTicker();
+if(STOCK_FEED_URL) setInterval(loadTicker, 60000);
+calc(); calc2();
+navigate();
+</script>
+</body>
+</html>
+                                                                                                                                                                                                                                                                                                                        
