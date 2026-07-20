@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Investcent Investment Bank | Investment Banking For You</title>
+<title>Investcent Investment Bank | Building Tomorrow's Wealth Today</title>
 <meta name="description" content="Investcent Investment Bank: boutique investment bank and active fund manager in Nairobi. Money market, multi-asset and green funds, pension mandates, SMAs, advisory and brokerage. Licensed by the CMA, RBA and NSE.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 <style>
 :root{
   --cyan:#0693e3;
@@ -22,7 +22,7 @@
   --green:#1E9E6A;
   --white:#FFFFFF;
   --serif:'Cormorant Garamond', Georgia, serif;
-  --sans:'Inter', 'Segoe UI', Helvetica, Arial, sans-serif;
+  --sans:'Open Sauce Sans', 'Roboto', 'Segoe UI', Helvetica, Arial, sans-serif;
   --shadow:0 18px 50px rgba(10,22,34,.10);
   --radius:18px;
 }
@@ -144,9 +144,28 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 
 /* ---------- Pillars ---------- */
 .pillars{background:var(--cyan-mist);border-bottom:1px solid var(--line)}
-.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;padding:38px 0}
-.pillar h4{font-size:15.5px;margin:10px 0 6px}
+.pillars-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:38px 0}
+.pillar{padding:20px 18px;border-radius:16px;border:1px solid transparent;transition:.3s;cursor:default}
+.pillar h4{font-size:15.5px;margin:0 0 6px;transition:.3s}
 .pillar p{font-size:13.5px;color:var(--slate)}
+.pillar:hover{background:#fff;border-color:var(--cyan);transform:translateY(-5px);box-shadow:var(--shadow)}
+.pillar:hover h4{color:var(--cyan-deep)}
+.pillars-grid:hover .pillar:not(:hover){opacity:.55}
+.p-ic{width:44px;height:44px;border-radius:12px;background:var(--icb,#E3F1FB);color:var(--icc,#0577B5);display:flex;align-items:center;justify-content:center;margin-bottom:12px;transition:.3s}
+.pillar:hover .p-ic{background:var(--icc,#0693e3);color:#fff;transform:rotate(-6deg) scale(1.08)}
+.pillars-grid .pillar:nth-child(1){--icb:#E3F1FB;--icc:#0577B5}
+.pillars-grid .pillar:nth-child(2){--icb:#F0EAFB;--icc:#6B4FA8}
+.pillars-grid .pillar:nth-child(3){--icb:#FDEAE8;--icc:#C2443B}
+.pillars-grid .pillar:nth-child(4){--icb:#E7F7EF;--icc:#157A52}
+.w-ic{position:absolute;top:20px;right:18px;width:38px;height:38px;border-radius:10px;background:var(--icb,#F2F8FD);color:var(--icc,#0577B5);display:flex;align-items:center;justify-content:center;transition:.3s}
+.why-item{position:relative}
+.why-item:hover .w-ic{background:var(--icc,#0693e3);color:#fff;transform:rotate(-6deg) scale(1.08)}
+.why-grid .why-item:nth-child(1){--icb:#F6EEDA;--icc:#8A6D14}
+.why-grid .why-item:nth-child(2){--icb:#E0F5F5;--icc:#0E7C7C}
+.why-grid .why-item:nth-child(3){--icb:#FDEAE8;--icc:#C2443B}
+.why-grid .why-item:nth-child(4){--icb:#E3F1FB;--icc:#0577B5}
+.why-grid .why-item:nth-child(5){--icb:#E7F7EF;--icc:#157A52}
+.svc-photo{width:100%;height:220px;object-fit:cover;border-radius:16px;margin-top:18px;box-shadow:0 10px 26px rgba(10,22,34,.14)}
 .pillar .ic{width:44px;height:44px;border-radius:12px;background:#fff;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:20px;box-shadow:0 4px 12px rgba(10,22,34,.05)}
 @media(max-width:900px){.pillars-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.pillars-grid{grid-template-columns:1fr}}
@@ -157,7 +176,10 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 .currency-toggle button.active{background:var(--cyan);color:#fff;box-shadow:0 6px 16px rgba(6,147,227,.35)}
 .fund-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .fund-card{border:1px solid var(--line);border-radius:var(--radius);padding:30px 28px;display:flex;flex-direction:column;transition:.3s;position:relative;background:#fff}
-.fund-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:#B9DCF8}
+.fund-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);border-color:var(--cyan);background:linear-gradient(180deg,#fff 30%,var(--cyan-soft))}
+.fund-card:hover h3{color:var(--cyan-deep)}
+.fund-card:hover .link{color:var(--cyan)}
+.fund-card h3,.fund-card .link{transition:.3s}
 .fund-card .badge{position:absolute;top:22px;right:22px;font-size:10.5px;font-weight:700;letter-spacing:.08em;padding:5px 12px;border-radius:999px}
 .badge.low{background:#E7F7EF;color:var(--green)}
 .badge.high{background:#FDF0E4;color:#C2691B}
@@ -204,9 +226,12 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 .calc .section-head p{color:#B9CEDC}
 .calc .eyebrow{color:var(--cyan)}
 .calc-panel{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:26px 28px;backdrop-filter:blur(8px)}
-.calc-panel label{display:flex;justify-content:space-between;font-size:13.5px;color:#B9CEDC;margin:14px 0 6px;font-weight:600}
-.calc-panel label output{color:#fff;font-weight:700}
+.calc-panel label{display:flex;justify-content:space-between;font-size:13.5px;color:#B9CEDC;margin:12px 0 6px;font-weight:600}
 .calc-panel input[type=range]{width:100%;accent-color:var(--cyan)}
+.calc-row{display:flex;gap:12px;align-items:center}
+.calc-row input[type=range]{flex:1;margin:0}
+.calc-row input[type=number]{width:122px;margin:0;padding:9px 10px;font-size:13.5px;border-radius:10px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.28);color:#fff;font-weight:600}
+.calc-row input[type=number]:focus{border-color:var(--cyan)}
 .calc-result{margin-top:20px;background:rgba(6,147,227,.14);border:1px solid rgba(6,147,227,.35);border-radius:16px;padding:15px;text-align:center}
 .calc-result small{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#7FC5F5;font-weight:700}
 .calc-result b{display:block;font-family:var(--serif);font-size:clamp(30px,3.4vw,42px);margin-top:6px}
@@ -256,10 +281,14 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.92);backdrop-
 
 /* ---------- Why / values ---------- */
 .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:20px;counter-reset:why}
-.why-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px}
-.why-item::before{counter-increment:why;content:"0" counter(why);font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold)}
-.why-item h4{font-size:15px;margin:10px 0 8px}
+.why-item{background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px 22px;transition:.3s;cursor:default}
+.why-item::before{counter-increment:why;content:"0" counter(why);font-family:var(--serif);font-size:26px;font-weight:700;color:var(--gold);display:inline-block;transition:.3s}
+.why-item h4{font-size:15px;margin:10px 0 8px;transition:.3s}
 .why-item p{font-size:13px;color:var(--slate)}
+.why-item:hover{transform:translateY(-6px);border-color:var(--cyan);box-shadow:var(--shadow);background:linear-gradient(180deg,#fff,var(--cyan-mist))}
+.why-item:hover::before{color:var(--cyan);transform:scale(1.18)}
+.why-item:hover h4{color:var(--cyan-deep)}
+.why-grid:hover .why-item:not(:hover){opacity:.55}
 @media(max-width:1000px){.why-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.why-grid{grid-template-columns:1fr}}
 .values-strip{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
@@ -436,8 +465,8 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
               <a href="#/services/svc-public">Public Funds Management</a>
             </div>
           </div>
-          <a href="#/services/svc-advisory">Advisory</a>
           <a href="#/services/svc-brokerage">Brokerage</a>
+          <a href="#/services/svc-advisory">Advisory</a>
         </div>
       </div>
       <div class="dropdown">
@@ -478,7 +507,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
     <div class="container hero-grid">
       <div>
         <span class="eyebrow" style="color:var(--cyan)">Boutique Investment Bank · Active Fund Manager · Nairobi</span>
-        <h1>Investment Banking <em>For You.</em></h1>
+        <h1>Building tomorrow's wealth <em>today.</em></h1>
         <p class="lead">In a market crowded with conventional thinking, Investcent stands apart. Experience the Investcent difference where rigorous research meets alternative innovation.</p>
         <div class="hero-actions">
           <a href="#/funds" class="btn btn-primary">Explore Our Funds</a>
@@ -503,10 +532,10 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <section class="pillars">
     <div class="container pillars-grid">
-      <div class="pillar"><h4>Conviction-Led Trading</h4><p>Passive matches the market. We aim to beat it, with high-conviction positions across asset classes, sized to a defined mandate.</p></div>
-      <div class="pillar"><h4>Real-Time Intelligence</h4><p>Proprietary macro and micro research drives every investment decision, capturing opportunity the market leaves on the table.</p></div>
-      <div class="pillar"><h4>Disciplined Risk</h4><p>Strict limits and oversight to protect capital while pursuing alpha. Prudent governance under CMA, RBA and NSE regulation.</p></div>
-      <div class="pillar"><h4>Certified Team</h4><p>CFA- and ICIFA-qualified investment professionals. Boutique attention with institutional discipline, directly accessible to every client.</p></div>
+      <div class="pillar"><div class="p-ic"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div><h4>Conviction-Led Trading</h4><p>Passive matches the market. We aim to beat it, with high-conviction positions across asset classes, sized to a defined mandate.</p></div>
+      <div class="pillar"><div class="p-ic"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 12 8 12 10 6 14 18 16 12 21 12"/></svg></div><h4>Real-Time Intelligence</h4><p>Proprietary macro and micro research drives every investment decision, capturing opportunity the market leaves on the table.</p></div>
+      <div class="pillar"><div class="p-ic"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V5.8z"/><path d="M9 12l2 2 4-4.5"/></svg></div><h4>Disciplined Risk</h4><p>Strict limits and oversight to protect capital while pursuing alpha. Prudent governance under CMA, RBA and NSE regulation.</p></div>
+      <div class="pillar"><div class="p-ic"><svg viewBox="0 0 24 24" width="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19.5c0-3 2.5-5 5.5-5s5.5 2 5.5 5"/><circle cx="17" cy="9.5" r="2.6"/><path d="M16 14.7c2.6.3 4.5 2.2 4.5 4.8"/></svg></div><h4>Professional Team</h4><p>Qualified investment professionals. Boutique attention with institutional discipline, directly accessible to every client.</p></div>
     </div>
   </section>
 
@@ -534,14 +563,14 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
         </div>
       </div>
       <div class="calc-panel reveal">
-        <label>Initial investment (KES) <output id="outInitial">100,000</output></label>
-        <input type="range" id="inInitial" min="2000" max="5000000" step="1000" value="100000" oninput="calc()">
-        <label>Monthly top-up (KES) <output id="outMonthly">10,000</output></label>
-        <input type="range" id="inMonthly" min="0" max="500000" step="1000" value="10000" oninput="calc()">
-        <label>Investment period (years) <output id="outYears">5</output></label>
-        <input type="range" id="inYears" min="1" max="30" step="1" value="5" oninput="calc()">
-        <label>Assumed net annual yield (%) <output id="outRate">12.0</output></label>
-        <input type="range" id="inRate" min="1" max="50" step="0.5" value="12" oninput="calc()">
+        <label>Initial investment (KES) <span>drag or type any amount</span></label>
+        <div class="calc-row"><input type="range" id="inInitial" min="2000" max="5000000" step="1000" value="100000" oninput="syncNum('','Initial')"><input type="number" id="nInitial" min="0" step="1000" value="100000" oninput="syncRange('','Initial')"></div>
+        <label>Monthly top-up (KES)</label>
+        <div class="calc-row"><input type="range" id="inMonthly" min="0" max="500000" step="1000" value="10000" oninput="syncNum('','Monthly')"><input type="number" id="nMonthly" min="0" step="1000" value="10000" oninput="syncRange('','Monthly')"></div>
+        <label>Investment period (years)</label>
+        <div class="calc-row"><input type="range" id="inYears" min="1" max="30" step="1" value="5" oninput="syncNum('','Years')"><input type="number" id="nYears" min="1" max="60" step="1" value="5" oninput="syncRange('','Years')"></div>
+        <label>Assumed net annual yield (%)</label>
+        <div class="calc-row"><input type="range" id="inRate" min="1" max="50" step="0.5" value="12" oninput="syncNum('','Rate')"><input type="number" id="nRate" min="0" max="50" step="0.5" value="12" oninput="syncRange('','Rate')"></div>
         <div class="calc-result">
           <small>Projected value</small>
           <b id="calcTotal">KES 0</b>
@@ -590,7 +619,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
         </div>
         <div class="svc-body">
           <p>Investcent is a Nairobi-based boutique investment bank, founded in 2016 as Investcent Partners to meet the needs of those seeking to grow and protect their wealth, and licensed as an investment bank since 2021. We manage retail, institutional and pension capital with one focus: generating alpha through disciplined, hands-on active management.</p>
-          <p>Our team consists of highly skilled, CFA- and ICIFA-qualified professionals and successful investors with deep experience trading financial markets, operating with the latest technology and investing software. We are active across every liquid asset class: equities, fixed income, FX, derivatives and alternatives, as an NSE Authorised Securities Dealer with real-time execution.</p>
+          <p>Our team consists of highly skilled professionals and successful investors with deep experience trading financial markets, operating with the latest technology and investing software. We are active across every liquid asset class: equities, fixed income, FX, derivatives and alternatives, as an NSE Authorised Securities Dealer with real-time execution.</p>
           <p>The growth in the local capital market over the past decade, driven in part by the government's need to finance development, has created a larger, more liquid and tradeable market. As participants have become more advanced, so have the products we use to capture these opportunities for our clients.</p>
           <div class="values-strip">
             <span>Integrity</span><span>Professionalism</span><span>Responsiveness</span><span>Passion</span><span>Innovation</span><span>Transparency</span>
@@ -608,22 +637,22 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
         <p>Our active mandate is designed to proactively seek outperformance, identifying and capturing market opportunities through disciplined, research-driven decision-making.</p>
       </div>
       <div class="why-grid">
-        <div class="why-item reveal"><h4>Deep Experience</h4><p>Dedicated, certified professionals with decades across global and African markets.</p></div>
-        <div class="why-item reveal"><h4>Rare Access</h4><p>Market opportunities that are attractive, and not always accessible to the public.</p></div>
-        <div class="why-item reveal"><h4>Risk Obsessed</h4><p>Managing drawdowns is how we help your money compound steadily.</p></div>
-        <div class="why-item reveal"><h4>Aligned Incentives</h4><p>We only succeed when our investors succeed. Hurdles before performance fees.</p></div>
-        <div class="why-item reveal"><h4>Radical Transparency</h4><p>You'll always understand how we work, what we hold and why.</p></div>
+        <div class="why-item reveal"><div class="w-ic"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5"/><path d="M8.8 13.2 7.5 21l4.5-2.3L16.5 21l-1.3-7.8"/></svg></div><h4>Proven Expertise</h4><p>Our experienced investment professionals combine deep market knowledge with decades of expertise across African and global markets.</p></div>
+        <div class="why-item reveal"><div class="w-ic"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="15.5" r="4"/><path d="M10.5 12.5 20 3M15 8l3 3M12.5 10.5l2 2"/></svg></div><h4>Unique Opportunities</h4><p>Unlock differentiated investment opportunities beyond traditional public markets.</p></div>
+        <div class="why-item reveal"><div class="w-ic"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l7 2.8v5.2c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V5.8z"/><path d="M9 12l2 2 4-4.5"/></svg></div><h4>Risk Disciplined</h4><p>Managing drawdowns is how we help your money compound steadily.</p></div>
+        <div class="why-item reveal"><div class="w-ic"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M8 21h8M12 6H5M12 6h7"/><path d="M5 6l-2.8 6h5.6zM19 6l-2.8 6h5.6z"/></svg></div><h4>Aligned Incentives</h4><p>We only succeed when our investors succeed. Hurdles before performance fees.</p></div>
+        <div class="why-item reveal"><div class="w-ic"><svg viewBox="0 0 24 24" width="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 12S6.5 5.5 12 5.5 21.5 12 21.5 12 17.5 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></div><h4>Transparent Investing</h4><p>We believe trust is built through transparency, clear reporting and open communication.</p></div>
       </div>
       <div class="edge-band reveal" style="margin-top:44px">
         <div>
-          <h3>Superior performance through <em>active management.</em></h3>
+          <h3>Pursuing superior performance through <em>active management.</em></h3>
           <p>Conviction-led trading, real-time proprietary intelligence and disciplined risk, with prudent oversight under CMA, RBA and NSE regulation, bespoke mandates, full fee and performance transparency, and the agility to respond swiftly to market shifts.</p>
           <div class="asset-chips"><span>Equities</span><span>Fixed Income</span><span>FX</span><span>Derivatives</span><span>Alternatives</span></div>
         </div>
         <div class="edge-points">
-          <div><b>Consistent, benchmark-beating returns</b>Alpha from active management, not market averages.</div>
+          <div><b>Performance-focused approach</b>Active management targeting returns above benchmark. Returns are not guaranteed.</div>
           <div><b>Custom-built mandates</b>Engineered to each client's investment objectives.</div>
-          <div><b>Certified team</b>CFA- and ICIFA-qualified investment professionals.</div>
+          <div><b>Professional team</b>Qualified investment professionals with institutional discipline.</div>
         </div>
       </div>
     </div>
@@ -685,7 +714,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <div class="svc-block" id="svc-pwm">
     <div class="container svc-grid reveal">
-      <div><div class="tagline">For HNWIs &amp; Family Offices</div><h2>Private Wealth Management</h2></div>
+      <div><div class="tagline">For HNWIs &amp; Family Offices</div><h2>Private Wealth Management</h2><img class="svc-photo" src="images/private-wealth.jpg" alt="Private wealth management" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=800&q=60'"></div>
       <div class="svc-body">
         <p>For our most sophisticated and discerning clients, we work alongside you using the same expertise and technology deployed in our flagship fund. Through a separately managed account you enjoy similar benefits to the fund, tailored to your objectives, constraints and time horizon.</p>
         <ul>
@@ -699,7 +728,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <div class="svc-block" id="svc-fm">
     <div class="container svc-grid reveal">
-      <div><div class="tagline">Collective Investment Schemes &amp; Flagship Fund</div><h2>Fund Management</h2></div>
+      <div><div class="tagline">Collective Investment Schemes &amp; Flagship Fund</div><h2>Fund Management</h2><img class="svc-photo" src="images/fund-management.jpg" alt="Portfolio holdings and valuation against benchmarks" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=60'"></div>
       <div class="svc-body">
         <p>Investcent is at heart a boutique fund manager. We manage pooled retail and institutional funds with professional, actively managed portfolios, and our flagship IIB Alpha+ Private Hedge Fund, a single master fund run on a discretionary, multi-asset basis (excluding real estate) with an absolute-return approach.</p>
         <ul>
@@ -716,11 +745,25 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
   <div class="svc-block" id="svc-pension">
     <div class="container">
       <div class="svc-grid reveal" style="margin-bottom:44px">
-        <div><div class="tagline">RBA-Licensed Retirement Solutions</div><h2>Pension Funds</h2></div>
+        <div><div class="tagline">RBA-Licensed Retirement Solutions</div><h2>Pension Funds</h2><img class="svc-photo" src="images/pension.jpg" alt="Pension savings growing from inception to maturity" loading="lazy" style="height:auto;object-fit:contain" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&q=60'"></div>
         <div class="svc-body">
-          <p>We manage pension capital under RBA regulation with one goal: superior, risk-managed returns for schemes and their members. Trustees choose between two mandate structures, both custom-built to the fund's investment objectives with full reporting and oversight.</p>
+          <p>We manage pension capital under RBA regulation with one goal: superior, risk-managed returns for schemes and their members. We offer both individual and umbrella pension schemes, and trustees choose between two investment mandate structures, all custom-built to the fund's investment objectives with full reporting and oversight.</p>
+          <div style="margin:18px 0 14px"><span class="eyebrow">Our Pension Schemes</span></div>
+          <div class="mandate-grid" style="margin-bottom:0;gap:16px">
+            <div class="mandate-card" style="padding:22px 20px">
+              <span class="rba">INDIVIDUAL</span>
+              <h3 style="font-size:21px">Individual Pension Scheme</h3>
+              <p style="font-size:13.5px">A personal retirement plan for employed, self-employed and informal-sector savers. You contribute at your own pace, your savings remain fully portable when you change jobs, and contributions attract applicable tax benefits, all under RBA-regulated trust protection.</p>
+            </div>
+            <div class="mandate-card" style="padding:22px 20px">
+              <span class="rba">UMBRELLA</span>
+              <h3 style="font-size:21px">Umbrella Pension Scheme</h3>
+              <p style="font-size:13.5px">Multiple employers participate under one professionally governed trust, sharing administration, custody and management costs. Ideal for SMEs and groups that want a full occupational scheme for their staff without the expense of running one alone.</p>
+            </div>
+          </div>
         </div>
       </div>
+      <div class="section-head reveal" style="margin-bottom:22px;max-width:none"><span class="eyebrow">Our Investment Mandate Structures</span></div>
       <div class="mandate-grid">
         <div class="mandate-card reveal">
           <span class="rba">RBA-LICENSED</span>
@@ -750,13 +793,13 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <div class="svc-block" id="svc-sma">
     <div class="container svc-grid reveal">
-      <div><div class="tagline">Dedicated Portfolios</div><h2>Separately Managed Accounts</h2></div>
+      <div><div class="tagline">Dedicated Portfolios</div><h2>Separately Managed Accounts</h2><img class="svc-photo" src="images/sma.jpg" alt="Portfolio manager reviewing an investment policy statement" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&q=60'"></div>
       <div class="svc-body">
         <p>An SMA is a dedicated portfolio managed exclusively for you, with direct ownership of every security rather than units in a pooled fund. You see exactly what you hold, why you hold it, and what it costs, while our team applies the same active investment discipline used across the firm.</p>
         <ul>
           <li>Direct ownership and full, line-by-line transparency</li>
           <li>Mandates tailored to your objectives, income needs, risk limits and exclusions</li>
-          <li>Suited to institutions, pension schemes, endowments and substantial private clients</li>
+          <li>Suited to institutions, pension schemes, endowments, saccos, trusts, family offices and substantial private clients</li>
         </ul>
       </div>
     </div>
@@ -764,7 +807,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <div class="svc-block" id="svc-endowment">
     <div class="container svc-grid reveal">
-      <div><div class="tagline">Perpetual Capital, Managed for Purpose</div><h2>Endowment Fund Management</h2></div>
+      <div><div class="tagline">Perpetual Capital, Managed for Purpose</div><h2>Endowment Fund Management</h2><img class="svc-photo" src="images/endowment.jpg" alt="Endowment fund management" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=60'"></div>
       <div class="svc-body">
         <p>Endowments exist to fund a mission, in perpetuity. We manage endowment capital for foundations, universities, schools, religious institutions and charitable trusts, balancing long-term capital growth against the sustainable spending your mission requires.</p>
         <ul>
@@ -778,7 +821,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
 
   <div class="svc-block" id="svc-public">
     <div class="container svc-grid reveal">
-      <div><div class="tagline">Government &amp; Public Sector</div><h2>Public Funds Management</h2></div>
+      <div><div class="tagline">Government &amp; Public Sector</div><h2>Public Funds Management</h2><img class="svc-photo" src="images/public-funds.jpg" alt="Public funds management" loading="lazy" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=60'"></div>
       <div class="svc-body">
         <p>We manage and advise on public-sector capital for county and national government entities, statutory bodies and state corporations, where governance, liquidity and accountability requirements are paramount.</p>
         <ul>
@@ -790,10 +833,24 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
     </div>
   </div>
 
-  <div class="svc-block" id="svc-advisory">
+  <div class="svc-block" id="svc-brokerage">
+    <div class="container svc-grid reveal">
+      <div><div class="tagline">NSE Authorised Securities Dealer</div><h2>Brokerage</h2><img class="svc-photo" src="https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?w=800&q=60" alt="Live market prices on a trading screen" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="svc-body">
+        <p>As a licensed securities dealer on the Nairobi Securities Exchange, we execute for our own book and for clients, with real-time execution, defined risk limits and the market intelligence of an active trading desk behind every order.</p>
+        <ul>
+          <li>Equities and fixed income dealing on the NSE, plus FX and derivatives capability</li>
+          <li>Proprietary &amp; client trading with real-time execution</li>
+          <li>Trade ideas and market colour from the desk that trades its own capital</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="svc-block" id="svc-advisory" style="border-bottom:none">
     <div class="container">
       <div class="svc-grid reveal" style="margin-bottom:40px">
-        <div><div class="tagline">Investment Banking</div><h2>Advisory</h2></div>
+        <div><div class="tagline">Investment Banking</div><h2>Advisory</h2><img class="svc-photo" src="https://images.unsplash.com/photo-1529699211952-734e80c4d42b?w=800&q=60" alt="Chess pieces, a symbol of strategy" loading="lazy" onerror="this.style.display='none'"></div>
         <div class="svc-body"><p>Full-service corporate and advisory capability, leveraging unique insight across the financial landscape and an extensive network of contacts to meet the most challenging objectives.</p></div>
       </div>
       <div class="adv-grid">
@@ -803,20 +860,6 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
         <div class="adv-card reveal"><h4>Government &amp; Public Sector</h4><p>Infrastructure funding, debt management and economic-development mandates.</p></div>
         <div class="adv-card reveal"><h4>Private Wealth Advisory</h4><p>Bespoke planning, portfolio construction &amp; succession for HNWIs and family offices.</p></div>
         <div class="adv-card reveal"><h4>Training &amp; Capacity Building</h4><p>Executive education, board training and certified capital-markets programmes.</p></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="svc-block" id="svc-brokerage" style="border-bottom:none">
-    <div class="container svc-grid reveal">
-      <div><div class="tagline">NSE Authorised Securities Dealer</div><h2>Brokerage</h2></div>
-      <div class="svc-body">
-        <p>As a licensed securities dealer on the Nairobi Securities Exchange, we execute for our own book and for clients, with real-time execution, defined risk limits and the market intelligence of an active trading desk behind every order.</p>
-        <ul>
-          <li>Equities and fixed income dealing on the NSE, plus FX and derivatives capability</li>
-          <li>Proprietary &amp; client trading with real-time execution</li>
-          <li>Trade ideas and market colour from the desk that trades its own capital</li>
-        </ul>
       </div>
     </div>
   </div>
@@ -867,14 +910,14 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
         </div>
       </div>
       <div class="calc-panel reveal">
-        <label>Initial investment (KES) <output id="outInitial2">100,000</output></label>
-        <input type="range" id="inInitial2" min="2000" max="5000000" step="1000" value="100000" oninput="calc2()">
-        <label>Monthly top-up (KES) <output id="outMonthly2">10,000</output></label>
-        <input type="range" id="inMonthly2" min="0" max="500000" step="1000" value="10000" oninput="calc2()">
-        <label>Investment period (years) <output id="outYears2">5</output></label>
-        <input type="range" id="inYears2" min="1" max="30" step="1" value="5" oninput="calc2()">
-        <label>Assumed net annual yield (%) <output id="outRate2">12.0</output></label>
-        <input type="range" id="inRate2" min="1" max="50" step="0.5" value="12" oninput="calc2()">
+        <label>Initial investment (KES) <span>drag or type any amount</span></label>
+        <div class="calc-row"><input type="range" id="inInitial2" min="2000" max="5000000" step="1000" value="100000" oninput="syncNum('2','Initial')"><input type="number" id="nInitial2" min="0" step="1000" value="100000" oninput="syncRange('2','Initial')"></div>
+        <label>Monthly top-up (KES)</label>
+        <div class="calc-row"><input type="range" id="inMonthly2" min="0" max="500000" step="1000" value="10000" oninput="syncNum('2','Monthly')"><input type="number" id="nMonthly2" min="0" step="1000" value="10000" oninput="syncRange('2','Monthly')"></div>
+        <label>Investment period (years)</label>
+        <div class="calc-row"><input type="range" id="inYears2" min="1" max="30" step="1" value="5" oninput="syncNum('2','Years')"><input type="number" id="nYears2" min="1" max="60" step="1" value="5" oninput="syncRange('2','Years')"></div>
+        <label>Assumed net annual yield (%)</label>
+        <div class="calc-row"><input type="range" id="inRate2" min="1" max="50" step="0.5" value="12" oninput="syncNum('2','Rate')"><input type="number" id="nRate2" min="0" max="50" step="0.5" value="12" oninput="syncRange('2','Rate')"></div>
         <div class="calc-result">
           <small>Projected value</small>
           <b id="calcTotal2">KES 0</b>
@@ -1082,7 +1125,7 @@ footer{background:var(--ink);color:#9DB7C7;font-size:14px}
     </div>
   </div>
   <div class="reg-strip">
-    <div class="container">Investcent Investment Bank Limited is licensed in the Republic of Kenya: Capital Markets Authority Fund Manager &amp; Investment Bank licence (No. 187); Retirement Benefits Authority pension fund manager registration (No. RBA/A/14/048); Nairobi Securities Exchange Authorised Securities Dealer; member of ICIFA and APTAK. Fund Trustee: NCBA Bank Kenya PLC · Custodian: I&amp;M Bank Kenya. Investments carry risk; the value of investments may go down as well as up and past performance is not a reliable indicator of future results. Market data shown is indicative and may be delayed; it does not constitute investment advice.</div>
+    <div class="container">Investcent Investment Bank Limited is licensed and regulated in the Republic of Kenya: Capital Markets Authority Fund Manager &amp; Investment Bank licence (No. 187); Retirement Benefits Authority pension fund manager registration (No. RBA/A/14/048); Nairobi Securities Exchange Authorised Securities Dealer; member of ICIFA and APTAK. Fund Trustee: NCBA Bank Kenya PLC · Custodian: I&amp;M Bank Kenya. Investments carry risk: the value of investments and any income from them may go down as well as up, past performance is not a reliable indicator of future results, and investors may not get back the full amount invested. Benchmarks and hurdle rates are targets, not promises, and returns are not guaranteed. The content of this website is for general information only and does not constitute an offer to sell or a solicitation of an offer to buy any security, nor investment advice or a personal recommendation; prospective investors should read the relevant Information Memorandum and, where necessary, consult an independent financial advisor before investing. Fees and charges applicable to each fund are disclosed on the respective fund pages and in the Information Memorandum. Market data shown is indicative and may be delayed; it does not constitute investment advice. Projections from the returns calculator are illustrations only and are not a forecast of actual performance.</div>
   </div>
   <div class="container foot-legal">
     <span>© 2026 Investcent Investment Bank. All rights reserved.</span>
@@ -1275,22 +1318,16 @@ async function loadTicker(){
   renderTicker(NSE_SNAPSHOT,false);
 }
 
-/* ================= Calculators ================= */
-function fmt(n){return 'KES '+Math.round(n).toLocaleString('en-KE')}
 function runCalc(sfx){
-  const g=id=>document.getElementById(id+sfx);
-  if(!g('inInitial'))return;
-  const P=+g('inInitial').value, M=+g('inMonthly').value, Y=+g('inYears').value, r=+g('inRate').value/100;
-  g('outInitial').textContent=P.toLocaleString();
-  g('outMonthly').textContent=M.toLocaleString();
-  g('outYears').textContent=Y;
-  g('outRate').textContent=(r*100).toFixed(1);
+  const gv=id=>{const el=document.getElementById(id+sfx);return el?(parseFloat(el.value)||0):0};
+  if(!document.getElementById('nInitial'+sfx))return;
+  const P=gv('nInitial'), M=gv('nMonthly'), Y=Math.max(1,gv('nYears')), r=gv('nRate')/100;
   const daily=r/365;
   let total=P*Math.pow(1+daily,365*Y);
   for(let m=1;m<=Y*12;m++){ total+=M*Math.pow(1+daily,365*Y-m*30.42); }
   const contributed=P+M*12*Y;
-  g('calcTotal').textContent=fmt(total);
-  g('calcDetail').textContent=`You contribute ${fmt(contributed)}, with projected growth of ${fmt(total-contributed)}`;
+  document.getElementById('calcTotal'+sfx).textContent=fmt(total);
+  document.getElementById('calcDetail'+sfx).textContent=`You contribute ${fmt(contributed)}, with projected growth of ${fmt(total-contributed)}`;
 }
 function calc(){runCalc('')}
 function calc2(){runCalc('2')}
@@ -1335,4 +1372,3 @@ navigate();
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                        
